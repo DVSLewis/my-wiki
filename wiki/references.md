@@ -15,9 +15,24 @@ Index.md breaks at 100-200 pages — add BM25/vector search beyond that
 ### Hermes Agent
 Source: https://github.com/NousResearch/hermes-agent
 Guide: https://hermesatlas.com/guide
-Orange Book: https://github.com/alchaincyf/hermes-agent-orange-book
 Docs: https://hermes-agent.nousresearch.com/docs
 Running on Zo Computer paid plan, Claude Sonnet 4.6, port 8644
+
+### Hermes Agent Orange Book
+Title: Hermes Agent: The Complete Guide (Hermes Agent 从入门到精通)
+Author: HuaShu (花叔) — Bilibili: AI进化论-花生 | More books: huasheng.ai
+Version: v260407/v260408, April 2026 | Based on Hermes Agent v0.7.0
+GitHub: https://github.com/alchaincyf/hermes-agent-orange-book
+English PDF: https://github.com/alchaincyf/hermes-agent-orange-book/raw/main/Hermes-Agent-The-Complete-Guide-v260407.pdf
+Chinese PDF: https://github.com/alchaincyf/hermes-agent-orange-book/raw/main/Hermes-Agent-%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-v260407.pdf
+Local copies in raw/: raw/papers/hermes-orange-book-en.pdf (1.5MB, 77pp English) + raw/papers/hermes-orange-book-zh.pdf (7.3MB, Chinese)
+Note: raw/hermes-orange-book.pdf is a 404 HTML placeholder — the real PDFs are in raw/papers/
+Note: The original R2 Cloudflare URL (pub-161ae4b5ed0644c4a43b5c6412287e03.r2.dev/latest/hermes-agent.pdf) returns 404 — use GitHub links above
+Ingested: wiki/hermes-orange-book.md (comprehensive, sourced directly from raw/papers/hermes-orange-book-en.pdf)
+Covers: 17 chapters, 5 parts — Harness Engineering, Learning Loop, Three-Layer Memory,
+  Skill System (format/structure/self-improvement), Tools + MCP, Installation, Multi-Platform Gateway,
+  Multi-Agent Orchestration (delegate_task, star topology, parallel profiles), Dev Automation,
+  Content Creation, Hermes vs Claude Code vs OpenClaw comparison, limits of self-improving agents
 
 ## Ethereum and Web3
 

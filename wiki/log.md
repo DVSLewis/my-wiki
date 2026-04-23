@@ -1,0 +1,55 @@
+# DVS Wiki Log
+
+> Chronological record of all wiki actions. Append-only.
+> Format: ## [YYYY-MM-DD] action | subject
+> Actions: ingest, update, query, lint, create, archive, delete
+> When this file exceeds 500 entries, rotate: rename to log-YYYY.md, start fresh.
+
+## [2026-04-23] create | Wiki initialized
+- Domain: DVS Agent Swarm — AI infrastructure, Ethereum/Web3, personal operations
+- Files present at session start: CONTEXT.md, SOUL.md, references.md, about-donny.md
+- index.md was empty — rebuilt from filesystem scan
+
+## [2026-04-23] ingest | X Posts batch (10 posts from references.md queue)
+Sources visited:
+- x.com/rubenhassid/status/2040293285168808063 — Claude 13 free AI courses list (Apr 4 2026)
+- x.com/hooeem/status/2039723470691451072 — X article (login-gated, content not retrieved)
+- x.com/milesdeutscher/status/2041972675418189933 — Claude Code + Obsidian second brain (Apr 8 2026)
+- x.com/bloggersarvesh/status/2041890491919430083 — Quote tweet of AI article, hype framing (Apr 8 2026)
+- x.com/noisyb0y1/status/2042086577636061436 — Claude Code security warning re: seed phrases/SSH keys (Apr 9 2026)
+- x.com/rubenhassid/status/2042558212990292013 — 8 files to stop prompting Claude (Apr 10 2026)
+- x.com/karpathy/status/2040470801506541998 — LLM Wiki idea file follow-up (Apr 4 2026)
+- x.com/blocmates/status/2042539396638085339 — Hermes Agent overview article (Apr 10 2026)
+- x.com/hooeem/status/2042293751805329445 — X article link (login-gated, content not retrieved)
+- x.com/51bodila/status/2046982199455428878 — CRITICAL dependency graph article (Apr 22 2026) — login-gated
+
+## [2026-04-23] ingest | Cognee GitHub README (https://github.com/topoteretes/cognee)
+- Installed cognee via pip install cognee — SUCCESS
+- Created wiki/cognee-setup.md covering: installation, four API calls (remember/recall/forget/improve), Athena migration plan, bootstrap script, Hermes native integration, MCP server, architecture internals
+- Updated index.md: total pages 6 -> 7
+
+## [2026-04-23] create | agent-build-order.md
+- New concept page: DVS agent dependency graph and build sequence
+- Tiers 0-3 derived from CONTEXT.md cross-referenced with ingested X posts
+- OPEN GAP: @51bodila article content not retrieved (X login required)
+- Files created: wiki/agent-build-order.md
+- Files updated: wiki/index.md
+
+## [2026-04-23] ingest | Hermes Orange Book PDF (raw/papers/hermes-orange-book-en.pdf)
+- Source: 77-page English PDF extracted via pymupdf (120K chars of text)
+- Prior wiki/hermes-orange-book.md was built from secondary sources (references.md notes + X posts)
+- Replaced with comprehensive summary sourced directly from the full PDF text
+- All 17 chapters covered with exact quotes, tables, and code examples from the book
+- Sections added: §01 Harness Engineering, §02 60-second overview, §03 Learning Loop (5 steps),
+  §04 Three-Layer Memory (all layers + Honcho dialectical modeling), §05 Skill System (format,
+  anatomy, auto-improvement, agentskills.io, porting), §06 40+ Tools + MCP, §07 Installation
+  (3 options + config.yaml deep dive), §08 First Conversation, §09 Multi-Platform Access,
+  §10 Custom Skills (SKILL.md format, anatomy, debugging, porting), §11 MCP Integration,
+  §12 Personal Knowledge Assistant, §13 Dev Automation, §14 Content Creation, §15 Multi-Agent
+  Orchestration (delegate_task, star topology, security, vs Anthropic 3-agent pattern),
+  §16 Hermes vs OpenClaw vs Claude Code, §17 Boundaries of self-improving agents
+- Section added: Running Parallel Profiles (multi-profile deployment pattern)
+- Section added: Key Architectural Decisions Explained
+- Section added: Glossary
+- Files updated: wiki/hermes-orange-book.md (48KB), wiki/references.md, wiki/log.md
+- Note: raw/hermes-orange-book.pdf is a 404 HTML placeholder — real PDFs in raw/papers/
