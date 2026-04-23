@@ -1,5 +1,5 @@
 # DVS Agent Swarm — Session Context
-Last updated: April 23 2026
+Last updated: April 23 2026 (evening)
 
 ## READ FIRST
 Fetch references.md for full resource details.
@@ -30,13 +30,13 @@ Flag better options BEFORE starting. Flag expensive operations.
 ## NINE AGENTS
 1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6
 2. Athena — Research/Wiki — BUILT — Claude Sonnet 4.6
-3. Apollo — Writing/Voice — NOT BUILT — GPT-4o via OpenRouter
-4. Iris — Operations — NOT BUILT — Gemini Flash via OpenRouter
-5. Hephaestus — Code — NOT BUILT — DeepSeek via OpenRouter
-6. Midas — Commerce/x402 — NOT BUILT — Claude Sonnet 4.6
-7. Janus — Trading/DeFi — NOT BUILT — Claude Sonnet 4.6
-8. Argus — Monitoring — NOT BUILT — Gemini Flash via OpenRouter
-9. Aphrodite — Marketing — NOT BUILT — Gemini Flash via OpenRouter
+3. Apollo — Writing/Voice — SOUL WRITTEN — GPT-4o via OpenRouter
+4. Iris — Operations — SOUL WRITTEN — Gemini Flash via OpenRouter
+5. Hephaestus — Code — SOUL WRITTEN — DeepSeek via OpenRouter
+6. Midas — Commerce/x402 — SOUL WRITTEN — Claude Sonnet 4.6
+7. Janus — Trading/DeFi — SOUL WRITTEN — Claude Sonnet 4.6
+8. Argus — Monitoring — SOUL WRITTEN — Gemini Flash via OpenRouter
+9. Aphrodite — Marketing — SOUL WRITTEN — Gemini Flash via OpenRouter
 
 Note: Iris and Argus build as Hermes skills calling Zo API, not full agents.
 Apollo: Donny has ChatGPT voice training already done — port to GPT-4o.
@@ -73,6 +73,7 @@ Session 1 Apr 21: Mac setup, GitHub wiki, Hermes install, Telegram live
 Session 2 Apr 22: Zo paid plan, SOUL.md, about-donny.md, Geode grant via Cowork
 Session 3 Apr 23: SOUL.json, Zo API architecture, merged CONTEXT.md, repo made public
 Session 4 Apr 23: Athena built, Cognee installed, API key rotated, gateway stable
+Session 5 Apr 23: SOUL.md written for all 7 agents (Apollo, Iris, Hephaestus, Midas, Janus, Argus, Aphrodite)
 
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
