@@ -29,7 +29,7 @@ Flag better options BEFORE starting. Flag expensive operations.
 
 ## NINE AGENTS
 1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6
-2. Athena — Research/Wiki — NOT BUILT — Claude Sonnet 4.6
+2. Athena — Research/Wiki — BUILT — Claude Sonnet 4.6
 3. Apollo — Writing/Voice — NOT BUILT — GPT-4o via OpenRouter
 4. Iris — Operations — NOT BUILT — Gemini Flash via OpenRouter
 5. Hephaestus — Code — NOT BUILT — DeepSeek via OpenRouter
@@ -43,7 +43,7 @@ Apollo: Donny has ChatGPT voice training already done — port to GPT-4o.
 Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 
 ## ENV VARS NEEDED (on Zo ~/.hermes/.env)
-- ANTHROPIC_API_KEY: SET
+- ANTHROPIC_API_KEY: SET (rotated Apr 23)
 - TELEGRAM_BOT_TOKEN: SET
 - EMAIL_ADDRESS: SET
 - OPENROUTER_API_KEY: NOT SET (do this first)
@@ -52,16 +52,14 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
 
 ## NEXT PRIORITIES
-1. Change Cowork to Sonnet not Opus (settings, saves credits)
+1. Run Athena bootstrap to ingest wiki into Cognee
 2. Sign up openrouter.ai, add OPENROUTER_API_KEY to ~/.hermes/.env
 3. Add GITHUB_TOKEN to ~/.hermes/.env
-4. Run: echo $ZO_CLIENT_IDENTITY_TOKEN on Zo
-5. Create raw/ folder in wiki repo
-6. Install Ethereum MCP on Zo
-7. Install defi-skills on Zo
-8. Install OWS on Zo, create agent-treasury wallet, paper backup keys
-9. Build Athena profile: hermes profile create athena
-10. Create apollo-private GitHub repo
+4. Create raw/ folder in wiki repo
+5. Install Ethereum MCP on Zo
+6. Install defi-skills on Zo
+7. Install OWS on Zo, create agent-treasury wallet, paper backup keys
+8. Create apollo-private GitHub repo
 
 ## ZO TERMINAL NOTES
 - hermes not found: source ~/.zshrc
@@ -74,6 +72,7 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 Session 1 Apr 21: Mac setup, GitHub wiki, Hermes install, Telegram live
 Session 2 Apr 22: Zo paid plan, SOUL.md, about-donny.md, Geode grant via Cowork
 Session 3 Apr 23: SOUL.json, Zo API architecture, merged CONTEXT.md, repo made public
+Session 4 Apr 23: Athena built, Cognee installed, API key rotated, gateway stable
 
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
