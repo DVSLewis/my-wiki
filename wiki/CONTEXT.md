@@ -49,7 +49,7 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - OPENROUTER_API_KEY: NOT SET (do this first)
 - GITHUB_TOKEN: NOT SET
 - ETHERSCAN_API_KEY: NOT SET
-- ZO_CLIENT_IDENTITY_TOKEN: NOT VERIFIED
+- ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
 
 ## NEXT PRIORITIES
 1. Change Cowork to Sonnet not Opus (settings, saves credits)
