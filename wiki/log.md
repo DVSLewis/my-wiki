@@ -53,3 +53,32 @@ Sources visited:
 - Section added: Glossary
 - Files updated: wiki/hermes-orange-book.md (48KB), wiki/references.md, wiki/log.md
 - Note: raw/hermes-orange-book.pdf is a 404 HTML placeholder — real PDFs in raw/papers/
+
+## [2026-04-23] create | xmcp-setup.md — XMCP server on Zo
+- Cloned https://github.com/xdevplatform/xmcp to /root/workspace/xmcp
+- Installed requirements into /root/workspace/xmcp/.venv
+- Patched server.py: added Bearer Token-only auth mode (no OAuth1 required)
+- Wrote .env with X_BEARER_TOKEN from /root/.hermes/profiles/athena/.env
+- Set X_API_TOOL_ALLOWLIST=getUsersByUsername,searchPostsRecent,getUsers,getUserTimeline,getTweetById
+- Confirmed 2 tools loaded: getUsersByUsername, searchPostsRecent
+  (getUsers/getUserTimeline/getTweetById not in X API v2 spec — see wiki for correct IDs)
+- Server running: http://127.0.0.1:8000/mcp (PID 10673)
+- Files created: wiki/xmcp-setup.md
+- Files updated: wiki/index.md (total pages 7->8), wiki/log.md
+
+## [2026-04-23] ingest | Daily Intelligence Brief — April 23, 2026
+- Researched 19 X/Twitter accounts: VitalikButerin, karpathy, koeppelmann, aboutcircles,
+  GnosisDAO, gnosischain, gnosisSafe, gnosisguild, cowswap, cyrilXBT, kylearojas, ethereumfndn,
+  echinstitute, gakonst, superphiz, timbeiko, samczsun, hudsonjameson, shivsakhuja
+- Method: Browser scraping (X API credits depleted, XMCP server returning 402 on all calls)
+- Key findings:
+  - @safe published Q1 2026 transparency report (Apr 23): $35.25B TVL, 61.1M smart accounts
+  - @cowswap DNS hijack grants proposal live (Apr 23): victims to be compensated
+  - @gnosischain: Fusaka hardfork activated on mainnet (Apr 14)
+  - @gakonst: Reth 2.0 released with gigagas/sec throughput (Apr 8)
+  - @gnosis_ (was @GnosisDAO): Active, engaging with EEZ narrative, AI events
+  - @safe (was @gnosisSafe): Handle migration confirmed
+  - AI+Ethereum convergence signal across multiple accounts (EF x402, koeppelmann, shivsakhuja)
+- Files created: wiki/daily-brief-2026-04-23.md
+- Files updated: wiki/index.md (total pages 8->9), wiki/log.md
+
