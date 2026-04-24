@@ -82,3 +82,17 @@ Sources visited:
 - Files created: wiki/daily-brief-2026-04-23.md
 - Files updated: wiki/index.md (total pages 8->9), wiki/log.md
 
+
+## [2026-04-24] ingest | Apollo Training — Donny Lewis writing corpus (6 pieces)
+- Fetched and ingested 6 pieces into raw/apollo-training/:
+  - finding-your-way.md (Apr 2021, donnylewis.com)
+  - my-mind-part-iv-jesus-buddha-brahma.md (Jan 2021, donnylewis.com)
+  - why-the-seesaw.md (Oct 2020, donnylewis.com)
+  - male-model-autobiography.md (donnylewis.com, biography page)
+  - truth-about-trust-1.md (Dec 2025, paragraph.com)
+  - truth-about-trust-2.md (Mar 2026, paragraph.com)
+- Created wiki/apollo-voice-profile.md — comprehensive writing fingerprint analysis
+  covering 10 dimensions: essential voice, sentence architecture, rhetorical moves,
+  vocabulary, structural habits, tonal range, thematic fingerprints, anti-patterns,
+  calibration checklist, and exemplar sentences
+- Updated index.md (total pages: 13), added Apollo section

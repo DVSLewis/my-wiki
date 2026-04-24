@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-04-24 | Total pages: 12
+> Last updated: 2026-04-24 | Total pages: 13
 
 ## Core Operational Files
 - [[CONTEXT.md]] — Session handoff doc: nine agents, infrastructure state, next priorities, session log
@@ -21,6 +21,9 @@
 
 ## Daily Briefs
 - [[daily-brief-2026-04-23.md]] — Daily intelligence brief Apr 23, 2026: Safe Q1 report, CoW Swap DNS hijack grants, Fusaka on Gnosis Chain, Reth 2.0, AI+Ethereum convergence signal
+
+## Apollo (Voice Agent)
+- [[apollo-voice-profile.md]] — Donny Lewis writing fingerprint: rhetorical moves, sentence patterns, vocabulary, structural habits, tonal range across 6 pieces (2020-2026)
 
 ## About
 - [[about-donny.md]] — Donny Lewis profile: role, projects, platforms, background
