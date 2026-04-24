@@ -1,5 +1,5 @@
 # DVS Agent Swarm — Session Context
-Last updated: April 24 2026 (handoff)
+Last updated: April 25 2026 (Session 9 handoff)
 
 ## READ FIRST
 Fetch references.md for full resource details.
@@ -30,7 +30,7 @@ Flag better options BEFORE starting. Flag expensive operations.
 
 ## NINE AGENTS
 1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6
-2. Athena — Research/Wiki — BUILT — Claude Sonnet 4.6
+2. Athena — Research/Wiki — ACTIVE — Claude Sonnet 4.6
 3. Apollo — Writing/Voice — SOUL WRITTEN — GPT-4o via OpenRouter
 4. Iris — Operations — SOUL WRITTEN — Gemini Flash via OpenRouter
 5. Hephaestus — Code — SOUL WRITTEN — DeepSeek via OpenRouter
@@ -53,12 +53,17 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
 
 ## NEXT PRIORITIES
-1. Add GITHUB_TOKEN to ~/.hermes/.env
-2. Install Ethereum MCP on Zo
-3. Install defi-skills on Zo
-4. Install OWS on Zo, create agent-treasury wallet, paper backup keys
-5. Create apollo-private GitHub repo
-6. Build remaining agents: Apollo, Iris, Hephaestus, Midas, Janus, Aphrodite
+Sunday goal: full swarm operational.
+1. Build Apollo — port Donny's ChatGPT voice training to GPT-4o via OpenRouter
+2. Build Iris — Hermes skill calling Zo API (ops/scheduling)
+3. Build Hephaestus — code agent via DeepSeek on OpenRouter
+4. Build Midas — commerce/x402 agent
+5. Build Janus — trading/DeFi (needs: defi-skills + Ethereum MCP + OWS wallet)
+6. Build Aphrodite — marketing agent
+7. Add GITHUB_TOKEN to ~/.hermes/.env
+8. Install Ethereum MCP on Zo
+9. Install OWS on Zo, create agent-treasury wallet, paper backup keys
+10. Create apollo-private GitHub repo
 
 ## ZO TERMINAL NOTES
 - hermes not found: source ~/.zshrc
@@ -100,6 +105,8 @@ Session 4 Apr 23: Athena built, Cognee installed, API key rotated, gateway stabl
 Session 5 Apr 23: SOUL.md written for all 7 remaining agents (Apollo, Iris, Hephaestus, Midas, Janus, Argus, Aphrodite) — all 9 SOULs complete
 Session 6 Apr 24: Full intelligence pipeline built — Argus daily brief + Athena synthesis + cron jobs set
 Session 7 Apr 24: XMCP live (20 tools, @Jerri_nft OAuth1), OpenRouter live, Argus CONFIGURED, all crons verified (Argus 9am CET daily, Athena 10am CET Mon+Thu)
+Session 8 Apr 25: CONTEXT.md updated — Athena ACTIVE, all 9 SOULs confirmed, Argus pipeline confirmed live at /root/workspace/, OPENROUTER_API_KEY + ZO_CLIENT_IDENTITY_TOKEN verified, XMCP 20 tools authenticated. Sunday goal set: full swarm operational.
+Session 9 Apr 25: Ongoing — building toward full swarm.
 
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
