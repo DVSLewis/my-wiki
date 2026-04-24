@@ -68,12 +68,38 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - Git push needs GitHub personal access token as password
 - If push rejected: git pull origin main --rebase then push
 
+## INTELLIGENCE PIPELINES
+
+### Argus Daily Brief (automated, runs 9am Berlin daily)
+- Script: /root/workspace/argus-daily-brief.sh
+- Reads RSSHub feeds for all 23 monitored accounts (3 tiers)
+- Scores posts 1-10 via Gemini Flash free model
+- Writes: wiki/daily-brief-YYYY-MM-DD.md (7+ posts)
+- Saves: raw/daily-inbox/YYYY-MM-DD.md (8+ posts for Athena)
+- Sends: Telegram concise summary to Donny
+- Pushes: to GitHub
+- Logs: /tmp/argus-brief.log
+- Account tiers: wiki/argus-monitored-accounts.md
+- Template: wiki/argus-brief-template.md
+
+### Athena Weekly Synthesis (automated, runs 10am Berlin Mon + Thu)
+- Script: /root/workspace/athena-weekly-synthesis.sh
+- Reads all raw/daily-inbox/ files since last synthesis
+- Identifies top insights, patterns, emerging signals
+- Updates wiki/references.md with new high-value sources
+- Creates: wiki/knowledge-synthesis-YYYY-MM-DD.md
+- Sends: Telegram knowledge base update summary to Donny
+- Pushes: to GitHub
+- Logs: /tmp/athena-synthesis.log
+- State tracker: /root/workspace/my-wiki/.last-synthesis
+
 ## SESSION LOG
 Session 1 Apr 21: Mac setup, GitHub wiki, Hermes install, Telegram live
 Session 2 Apr 22: Zo paid plan, SOUL.md, about-donny.md, Geode grant via Cowork
 Session 3 Apr 23: SOUL.json, Zo API architecture, merged CONTEXT.md, repo made public
 Session 4 Apr 23: Athena built, Cognee installed, API key rotated, gateway stable
 Session 5 Apr 23: SOUL.md written for all 7 agents (Apollo, Iris, Hephaestus, Midas, Janus, Argus, Aphrodite)
+Session 6 Apr 24: Full intelligence pipeline built — Argus daily brief + Athena synthesis + cron jobs
 
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
