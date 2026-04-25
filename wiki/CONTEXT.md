@@ -24,7 +24,7 @@ Flag better options BEFORE starting. Flag expensive operations.
 - Mac wiki: ~/Documents/my-wiki
 - Zo wiki: /root/workspace/my-wiki
 - Hermes config: ~/.hermes/ on Zo
-- SOUL.md and SOUL.json: written and loaded (all 9 agents)
+- SOUL.md files: LIVE at ~/.hermes/profiles/{agent}/SOUL.md — private, NOT in git. All 9 agents have SOULs written. Claude does not have direct access to them (they're not in the wiki repo). Safe from external exposure. Athena has read-only access to wiki/agents/SOULs/ for context only.
 - about-donny.md: written and in wiki/
 - OpenRouter: SET
 - XMCP: LIVE — 20 tools, authenticated as @Jerri_nft via OAuth1, Fileverse MCP deployed on Cloudflare
