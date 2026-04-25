@@ -49,7 +49,7 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - TELEGRAM_BOT_TOKEN: SET
 - EMAIL_ADDRESS: SET
 - OPENROUTER_API_KEY: SET (live Apr 24)
-- GITHUB_TOKEN: NOT SET
+- GITHUB_TOKEN: SET — stored in ~/.git-credentials (not in .env files), accessed via git's credential.helper=store. Used by git push to DVSLewis/my-wiki. NOT exposed as env var — do NOT uncomment or export into .env files.
 - ETHERSCAN_API_KEY: NOT SET
 - ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
 
