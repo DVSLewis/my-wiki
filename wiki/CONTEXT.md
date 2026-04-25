@@ -1,5 +1,5 @@
 # DVS Agent Swarm — Session Context
-Last updated: April 25 2026 (Session 9 handoff)
+Last updated: April 25 2026 (Session 10)
 
 ## READ FIRST
 Fetch references.md for full resource details.
@@ -26,17 +26,18 @@ Flag better options BEFORE starting. Flag expensive operations.
 - Hermes config: ~/.hermes/ on Zo
 - SOUL.md and SOUL.json: written and loaded (all 9 agents)
 - about-donny.md: written and in wiki/
-- XMCP: LIVE — 20 tools, authenticated as @Jerri_nft via OAuth1
+- OpenRouter: SET
+- XMCP: LIVE — 20 tools, authenticated as @Jerri_nft via OAuth1, Fileverse MCP deployed on Cloudflare
 
 ## NINE AGENTS
 1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6
 2. Athena — Research/Wiki — ACTIVE — Claude Sonnet 4.6
 3. Apollo — Writing/Voice — SOUL WRITTEN — GPT-4o via OpenRouter
 4. Iris — Operations — SOUL WRITTEN — Gemini Flash via OpenRouter
-5. Hephaestus — Code — SOUL WRITTEN — DeepSeek via OpenRouter
+5. Hephaestus — Code — ACTIVE — DeepSeek via OpenRouter
 6. Midas — Commerce/x402 — SOUL WRITTEN — Claude Sonnet 4.6
 7. Janus — Trading/DeFi — SOUL WRITTEN — Claude Sonnet 4.6
-8. Argus — Monitoring — CONFIGURED — Gemini Flash via OpenRouter
+8. Argus — Monitoring — CONFIGURED — Gemini Flash via OpenRouter, daily brief pipeline
 9. Aphrodite — Marketing — SOUL WRITTEN — Gemini Flash via OpenRouter
 
 Note: Iris and Argus build as Hermes skills calling Zo API, not full agents.
@@ -53,17 +54,11 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
 
 ## NEXT PRIORITIES
-Sunday goal: full swarm operational.
-1. Build Apollo — port Donny's ChatGPT voice training to GPT-4o via OpenRouter
-2. Build Iris — Hermes skill calling Zo API (ops/scheduling)
-3. Build Hephaestus — code agent via DeepSeek on OpenRouter
-4. Build Midas — commerce/x402 agent
-5. Build Janus — trading/DeFi (needs: defi-skills + Ethereum MCP + OWS wallet)
-6. Build Aphrodite — marketing agent
-7. Add GITHUB_TOKEN to ~/.hermes/.env
-8. Install Ethereum MCP on Zo
-9. Install OWS on Zo, create agent-treasury wallet, paper backup keys
-10. Create apollo-private GitHub repo
+1. Apollo voice activation - training corpus assembled at /root/workspace/apollo-training/voice/ (private, not in wiki repo)
+2. Ethereum MCP stack
+3. OWS wallet
+4. Janus Midas activation
+5. CONTEXT.md protection hook via Hephaestus
 
 ## ZO TERMINAL NOTES
 - hermes not found: source ~/.zshrc
@@ -107,6 +102,7 @@ Session 6 Apr 24: Full intelligence pipeline built — Argus daily brief + Athen
 Session 7 Apr 24: XMCP live (20 tools, @Jerri_nft OAuth1), OpenRouter live, Argus CONFIGURED, all crons verified (Argus 9am CET daily, Athena 10am CET Mon+Thu)
 Session 8 Apr 25: CONTEXT.md updated — Athena ACTIVE, Athena is in a read-only locked state for the rest of the day., OPENROUTER_API_KEY + ZO_CLIENT_IDENTITY_TOKEN verified, XMCP 20 tools authenticated. Sunday goal set: full swarm operational.
 Session 9 Apr 25: Ongoing — building toward full swarm.
+Session 10 Apr 25: CONTEXT.md updated with current agent and stack state, Apollo training corpus location noted, next priorities defined
 
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
