@@ -119,6 +119,6 @@ Session 9 Apr 25: Ongoing — building toward full swarm.
 
 ## NEW SESSION START PROMPT
 Fetch and read these two files:
-https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/CONTEXT.md
-https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/references.md
+https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/CONTEXT.md?v=$(date +%Y%m%d)
+https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/references.md?v=$(date +%Y%m%d)
 Then say: I have read CONTEXT.md and references.md. Ready to continue — what is the priority today?
