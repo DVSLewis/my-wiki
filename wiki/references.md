@@ -108,6 +108,15 @@ Capabilities: Files, code, web browse, email, calendar, tasks, image gen, deploy
 Wiki repo: https://github.com/DVSLewis/my-wiki (PUBLIC)
 Auth: Personal access token, 90 day expiry, regenerate at github.com/settings/tokens
 
+## Tavily Search SDK
+Source: https://tavily.com
+Python: `pip install tavily-python`
+Docs: https://docs.tavily.com
+Status: INSTALLED in /root/workspace/my-wiki/scripts/tavily_search.py
+API Key: Get from https://app.tavily.com/api-key — add TAVILY_API_KEY to ~/.hermes/.env
+TavilySearch class: TavilySearchContext (persistent context), TavilySearchResults (one-shot), search_and_ingest() for wiki pipeline
+Used by: Athena for live web search, Janus for DeFi research, Argus for account summaries
+
 ## Donny Platforms
 
 Website: https://donnylewis.com

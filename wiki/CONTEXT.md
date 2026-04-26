@@ -95,6 +95,8 @@ Private files live at: /root/workspace/dvs-private/ — NOT in git, NOT on GitHu
 
 ## SESSION LOG
 Session 13 Apr 26: Fileverse MCP verified working (storage_id 53c6777f840f8a03a5001b53). Private storage /root/workspace/dvs-private/ set up with MANIFEST.md. DVS Vision document created via Fileverse MCP — Donny's personal goals + Athena's collective intelligence framing. Athena producing strong writing (DVS Vision section). All 9 agents active. Argus pipeline running. Hermes SOUL, Apollo SOUL, Aphrodite SOUL all updated with latest principles. invoke-apollo hard rules confirmed (no m-dashes, no crypto Twitter). CONTEXT.md updated and ready for next session.
+
+Session 14 Apr 26: Tavily search integrated into Athena pipeline. tavily-python installed in /root/workspace/my-wiki/scripts/. TavilySearch class built with TavilySearchContext for persistent research context, TavilySearchResults for one-shot queries, and search_and_ingest() for wiki-wiki ingestion pipeline. All 26 Argus-monitored accounts now have fresh summaries via Tavily. references.md updated with Tavily search SDK. CONTEXT.md + references.md pushed to GitHub. Athena now has both RSS aggregation (Argus) and live web search (Tavily) in her intelligence pipeline.
 Session 12 Apr 25: Apollo activated with voice profile (241-line Donny voice), invoke-apollo skill created, Hephaestus m-dash hard rule added. Aphrodite RewriteBeforeYouSend campaign shown but not yet saved to filesystem.
 Session 11 Apr 25: All 9 agent SOUL.md files fully integrated with DVS Oath and individual principles. Pantheon soul complete.
 Session 1 Apr 21: Mac setup, GitHub wiki, Hermes install, Telegram live
