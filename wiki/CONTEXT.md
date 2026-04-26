@@ -1,5 +1,5 @@
 # DVS Agent Swarm — Session Context
-Last updated: April 25 2026 (Session 10)
+Last updated: April 26 2026 (Session 13)
 
 ## READ FIRST
 Fetch references.md for full resource details.
@@ -24,41 +24,41 @@ Flag better options BEFORE starting. Flag expensive operations.
 - Mac wiki: ~/Documents/my-wiki
 - Zo wiki: /root/workspace/my-wiki
 - Hermes config: ~/.hermes/ on Zo
-- SOUL.md files: LIVE at ~/.hermes/profiles/{agent}/SOUL.md — private, NOT in git. All 9 agents have SOULs written. Claude does not have direct access to them (they're not in the wiki repo). Safe from external exposure. Athena has read-only access to wiki/agents/SOULs/ for context only.
+- SOUL.md files: LIVE at ~/.hermes/profiles/{agent}/SOUL.md — private, NOT in git. All 9 agents have SOULs written. Safe from external exposure.
 - about-donny.md: written and in wiki/
 - OpenRouter: SET
 - XMCP: LIVE — 20 tools, authenticated as @Jerri_nft via OAuth1, Fileverse MCP deployed on Cloudflare
+- Fileverse MCP: VERIFIED WORKING — storage_id 53c6777f840f8a03a5001b53, all tools operational (create, read, list, delete via MCP protocol through Hermes)
+- DVS Private Storage: /root/workspace/dvs-private/ — NOT in git, NOT on GitHub. Agent secrets, private goals, credentials. Athena has read access via MANIFEST.md.
 
-## NINE AGENTS
-1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6
-2. Athena — Research/Wiki — ACTIVE — Claude Sonnet 4.6
-3. Apollo — Writing/Voice — SOUL WRITTEN — GPT-4o via OpenRouter
+## NINE AGENTS — ALL ACTIVE
+1. Hermes — Orchestrator — RUNNING — Claude Sonnet 4.6, full Pantheon SOUL loaded
+2. Athena — Research/Wiki — ACTIVE, producing strong writing, read-locked when needed
+3. Apollo — Writing/Voice — ACTIVE, invoke-apollo skill operational with hard rules (no m-dashes, no crypto Twitter voice), 241-line Donny voice profile
 4. Iris — Operations — SOUL WRITTEN — Gemini Flash via OpenRouter
 5. Hephaestus — Code — ACTIVE — DeepSeek via OpenRouter
 6. Midas — Commerce/x402 — SOUL WRITTEN — Claude Sonnet 4.6
 7. Janus — Trading/DeFi — SOUL WRITTEN — Claude Sonnet 4.6
-8. Argus — Monitoring — CONFIGURED — Gemini Flash via OpenRouter, daily brief pipeline
-9. Aphrodite — Marketing — SOUL WRITTEN — Gemini Flash via OpenRouter
+8. Argus — Monitoring — CONFIGURED — Gemini Flash via OpenRouter, daily brief pipeline running
+9. Aphrodite — Marketing — SOUL WRITTEN — Gemini Flash via OpenRouter, RewriteBeforeYouSend client active
 
 Note: Iris and Argus build as Hermes skills calling Zo API, not full agents.
 Apollo: Donny has ChatGPT voice training already done — port to GPT-4o.
 Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 
+## PRIVATE STORAGE (DVS-PRIVATE)
+Private files live at: /root/workspace/dvs-private/ — NOT in git, NOT on GitHub.
+- MANIFEST.md — tracks what's in private storage, Athena reads this to know what's there without burning API calls
+- dvs-vision.md — Donny's personal goals + 5-year vision + Athena's collective intelligence framing (written via Fileverse MCP)
+
 ## ENV VARS NEEDED (on Zo ~/.hermes/.env)
-- ANTHROPIC_API_KEY: SET (rotated Apr 23)
+- ANTHROPIC_API_KEY: SET
 - TELEGRAM_BOT_TOKEN: SET
 - EMAIL_ADDRESS: SET
-- OPENROUTER_API_KEY: SET (live Apr 24)
-- GITHUB_TOKEN: SET — stored in ~/.git-credentials (not in .env files), accessed via git's credential.helper=store. Used by git push to DVSLewis/my-wiki. NOT exposed as env var — do NOT uncomment or export into .env files.
+- OPENROUTER_API_KEY: SET
+- GITHUB_TOKEN: SET — stored in ~/.git-credentials (not in .env files), accessed via git's credential.helper=store. Used by git push to DVSLewis/my-wiki. NEVER uncomment or export into .env files.
 - ETHERSCAN_API_KEY: NOT SET
 - ZO_CLIENT_IDENTITY_TOKEN: SET AND VERIFIED
-
-## NEXT PRIORITIES
-1. Apollo voice activation - training corpus assembled at /root/workspace/apollo-training/voice/ (private, not in wiki repo)
-2. Ethereum MCP stack
-3. OWS wallet
-4. Janus Midas activation
-5. CONTEXT.md protection hook via Hephaestus
 
 ## ZO TERMINAL NOTES
 - hermes not found: source ~/.zshrc
@@ -66,12 +66,13 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - File writing: use cat heredoc method, nano has paste issues
 - Git push needs GitHub personal access token as password
 - If push rejected: git pull origin main --rebase then push
+- Fileverse MCP: use hermes mcp call fileverse_storage_create with auth token from ~/.hermes/.env — tools work via Hermes MCP protocol
 
 ## INTELLIGENCE PIPELINES
 
 ### Argus Daily Brief (automated, runs 9am Berlin daily)
 - Script: /root/workspace/argus-daily-brief.sh
-- Reads RSSHub feeds for all 23 monitored accounts (3 tiers)
+- Reads RSSHub feeds for all 26 monitored accounts (3 tiers)
 - Scores posts 1-10 via Gemini Flash free model
 - Writes: wiki/daily-brief-YYYY-MM-DD.md (7+ posts)
 - Saves: raw/daily-inbox/YYYY-MM-DD.md (8+ posts for Athena)
@@ -93,8 +94,8 @@ Janus needs: defi-skills + Ethereum MCP + OWS wallet.
 - State tracker: /root/workspace/my-wiki/.last-synthesis
 
 ## SESSION LOG
-Session 12 Apr 25: Apollo activated with voice profile (241-line Donny voice), invoke-apollo skill created, Hephaestus m-dash hard rule added, Aphrodite client deliverables (RewriteBeforeYouSend campaign) shown but not yet saved to filesystem. Session logged manually via Zo terminal.
-Session 12 Apr 25: Apollo activated with voice training. First essay written — ethis-2026-essay.md. Hephaestus invoke-apollo skill in progress.
+Session 13 Apr 26: Fileverse MCP verified working (storage_id 53c6777f840f8a03a5001b53). Private storage /root/workspace/dvs-private/ set up with MANIFEST.md. DVS Vision document created via Fileverse MCP — Donny's personal goals + Athena's collective intelligence framing. Athena producing strong writing (DVS Vision section). All 9 agents active. Argus pipeline running. Hermes SOUL, Apollo SOUL, Aphrodite SOUL all updated with latest principles. invoke-apollo hard rules confirmed (no m-dashes, no crypto Twitter). CONTEXT.md updated and ready for next session.
+Session 12 Apr 25: Apollo activated with voice profile (241-line Donny voice), invoke-apollo skill created, Hephaestus m-dash hard rule added. Aphrodite RewriteBeforeYouSend campaign shown but not yet saved to filesystem.
 Session 11 Apr 25: All 9 agent SOUL.md files fully integrated with DVS Oath and individual principles. Pantheon soul complete.
 Session 1 Apr 21: Mac setup, GitHub wiki, Hermes install, Telegram live
 Session 2 Apr 22: Zo paid plan, SOUL.md, about-donny.md, Geode grant via Cowork
@@ -105,7 +106,7 @@ Session 6 Apr 24: Full intelligence pipeline built — Argus daily brief + Athen
 Session 7 Apr 24: XMCP live (20 tools, @Jerri_nft OAuth1), OpenRouter live, Argus CONFIGURED, all crons verified (Argus 9am CET daily, Athena 10am CET Mon+Thu)
 Session 8 Apr 25: CONTEXT.md updated — Athena ACTIVE, Athena is in a read-only locked state for the rest of the day., OPENROUTER_API_KEY + ZO_CLIENT_IDENTITY_TOKEN verified, XMCP 20 tools authenticated. Sunday goal set: full swarm operational.
 Session 9 Apr 25: Ongoing — building toward full swarm.
-Session 11 Apr 25 — All 9 agent SOUL.md files fully integrated with DVS Oath and individual principles. Pantheon soul complete.
+
 ## END OF SESSION PROTOCOL
 1. Update this file — keep it under 2000 words
 2. Update references.md if new sources added
@@ -119,4 +120,3 @@ Fetch and read these two files:
 https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/CONTEXT.md
 https://raw.githubusercontent.com/DVSLewis/my-wiki/main/wiki/references.md
 Then say: I have read CONTEXT.md and references.md. Ready to continue — what is the priority today?
-
