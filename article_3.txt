@@ -1,0 +1,19 @@
+Article 3: Trust as Scaffolding
+
+Technology is scaffolding that humans must learn to trust, the same way they learned over centuries to trust banks, courts, and contracts. Those institutions did not replace human trust either; they gave it somewhere stable to rest. The goal is not a trustless world. The goal is a world where trust remains a freely chosen wager between people, not a resource harvested by whoever controls the infrastructure.
+
+Consider the state of value transfer. For years, digital money felt like an illusion. Now, settlement rails are reconnecting value to reality, allowing us to transact with greater certainty.
+
+Then there’s the problem of proving personhood without surrendering our very beings. Projects like ZKPassport, Reclaim, and Rarimo offer paths toward establishing identity without demanding bodily surrender. The revocable/not-revocable insight is key here: passwords rotate, keys rotate, a face does not rotate. Trust never disappears; it moves. The question is whether it moves to healthier places.
+
+Privacy is another battleground. Tools like Aztec, RAILGUN, zkBob, Umbra, and Privacy Pools are erecting walls against the constant surveillance, giving users back control over their data. As Edward Snowden warned, claiming you don't need privacy because you have nothing to hide is like saying you don't need freedom of speech because you have nothing to say.
+
+Private coordination is essential. MACI and Shutter provide avenues for groups to organize and make decisions without exposing their intentions to the world. We also have Vocdoni, an open-source decentralized voting protocol. It has processed over 200,000 votes over seven years in production, delivering legally valid results. Used by city councils, cooperatives, NGOs, and political parties, it allows any observer to verify the result cryptographically, removing the need to trust the vendor. It is the practical bridge for organizations that still run elections by email or paper ballot, bridging the gap between existing governance culture and cryptographically verifiable coordination.
+
+Network privacy matters just as much. Projects like Nym and HOPR are building networks that resist censorship and protect users' anonymity.
+
+Honest computation offers verifiable guarantees. 0xMiden, INTMAX, TEN, Fhenix, and Zama are all pushing the boundaries of what's possible, creating systems where computation can be trusted even when the actors cannot. James Madison, in Federalist 51, argued that if men were angels, no government would be necessary. In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.
+
+Finally, we arrive at AI, which acts as a pressure multiplier. In the wrong hands, it could amplify existing inequalities and erode trust even further. We must remember Hannah Arendt's warning about bureaucracies turning people into cogs, stripping them of their individuality and agency.
+
+Technology offers us vital scaffolding that gives trust somewhere stable to rest. But ultimately, the deeper trust remains what it has always been: the courage to rely on each other, backed by the right to walk away when we must.
