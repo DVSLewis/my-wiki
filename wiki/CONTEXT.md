@@ -108,7 +108,7 @@ Session 8 Apr 25: CONTEXT.md updated — Athena ACTIVE, Athena is in a read-only
 Session 9 Apr 25: Ongoing — building toward full swarm.
 
 ## END OF SESSION PROTOCOL
-1. Update this file — keep it under 2000 words
+1. Update this file — preserve all content, do not truncate
 2. Update references.md if new sources added
 3. cd ~/Documents/my-wiki
 4. git add wiki/CONTEXT.md wiki/references.md
