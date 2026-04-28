@@ -55,8 +55,10 @@ echo "Inbox files to process: ${#INBOX_FILES[@]}"
 if [ "${#INBOX_FILES[@]}" -eq 0 ]; then
     echo "[INFO] No new inbox files since last synthesis. Exiting."
     # Send brief Telegram notification
-    hermes chat -q "Send this to Donny on Telegram (chat ID 6127567978): Athena synthesis ${DATE}: no new high-signal posts since last run. Knowledge base current." \
-        --provider anthropic --model claude-haiku-3-5 2>/dev/null || true
+    BOT_TOKEN=$(grep "^TELEGRAM_BOT_TOKEN=" /root/.hermes/.env | cut -d'=' -f2)
+    curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+      --data-urlencode "chat_id=6127567978" \
+      --data-urlencode "text=Athena synthesis ${DATE}: no new high-signal posts since last run. Knowledge base current." > /dev/null || true
     exit 0
 fi
 
@@ -258,11 +260,11 @@ echo "--- Sending Telegram summary ---"
 
 TG_MSG=$(cat /tmp/athena-tg-summary.txt 2>/dev/null || echo "Athena synthesis ${DATE} complete. Check wiki for knowledge synthesis report.")
 
-hermes chat -q "Send this message to Donny on Telegram (chat ID 6127567978): ${TG_MSG}
-
-Then confirm it was sent." \
-    --provider anthropic --model claude-haiku-3-5 2>/dev/null || \
-echo "[WARN] Hermes Telegram send failed — synthesis still written to wiki"
+BOT_TOKEN=$(grep "^TELEGRAM_BOT_TOKEN=" /root/.hermes/.env | cut -d'=' -f2)
+curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+  --data-urlencode "chat_id=6127567978" \
+  --data-urlencode "text=${TG_MSG}" > /dev/null || \
+echo "[WARN] Telegram send failed — synthesis still written to wiki"
 
 # ---------------------------------------------------------------------------
 # Push to GitHub
