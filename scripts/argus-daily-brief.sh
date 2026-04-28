@@ -149,7 +149,7 @@ for _attempt in range(3):
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             raw = resp.read().decode()
-            sys.stderr.write("[DEBUG] OpenAI raw response: " + raw[:500] + "\n")
+            sys.stderr.write("[DEBUG] OpenAI raw response: " + raw[:2000] + "\n")
             data = json.loads(raw)
             # already parsed above
             output = data["choices"][0]["message"]["content"].strip()
