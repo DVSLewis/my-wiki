@@ -247,8 +247,10 @@ LLM_ENDPOINT=https://openrouter.ai/api/v1 \
 python3 /root/workspace/my-wiki/scripts/cognee_block.py
 
 TG_MSG=$(cat /tmp/argus-tg-summary.txt 2>/dev/null || echo "DVS Brief ${DATE}: no data")
-timeout "$TIMEOUT_VAL" /root/.hermes/hermes-agent/venv/bin/hermes chat -Q -q "Send to Donny on Telegram: ${TG_MSG}" \
-  --provider openrouter --model "$MODEL_NAME" 2>/dev/null || echo "[WARN] TG send failed"
+BOT_TOKEN=$(grep "^TELEGRAM_BOT_TOKEN=" /root/.hermes/.env | cut -d'=' -f2)
+curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+  --data-urlencode "chat_id=6127567978" \
+  --data-urlencode "text=${TG_MSG}" > /dev/null || echo "[WARN] TG send failed"
 
 echo "[${TIMESTAMP}] ARGUS | daily-brief | complete | ${BRIEF_OUT}" >> "${WIKI}/wiki/log.md"
 
