@@ -126,15 +126,15 @@ prompt = "You are Argus, an intelligence analyst for the DVS Agent Swarm. Score 
 for i, p in enumerate(posts[:25]):
     prompt += f"{i+1}. {p.get('HANDLE')} — {p.get('TITLE')} | {p.get('LINK')}\n"
 
-api_key = """$ORKEY"""
+api_key = """$OPENAI_KEY"""
 payload = json.dumps({
-    "model": "google/gemini-2.0-flash-001",
+    "model": "gpt-4o-mini",
     "max_tokens": 2000,
     "messages": [{"role": "user", "content": prompt}]
 }).encode()
 
 req = urllib.request.Request(
-    "https://openrouter.ai/api/v1/chat/completions",
+    "https://api.openai.com/v1/chat/completions",
     data=payload,
     headers={
         "Authorization": f"Bearer {api_key}",
