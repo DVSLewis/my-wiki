@@ -135,7 +135,7 @@ for i, p in enumerate(posts[:50]):
 
 try:
     res = subprocess.run(
-        ["timeout", "$TIMEOUT_VAL", "hermes", "chat", "--non-interactive", "-q", prompt, "--provider", "openrouter", "--model", "$MODEL_NAME"],
+        ["timeout", "$TIMEOUT_VAL", "hermes", "chat", "-Q", "-q", prompt, "--provider", "openrouter", "--model", "$MODEL_NAME"],
         capture_output=True, text=True, timeout=65
     )
     if res.returncode != 0:
@@ -194,7 +194,7 @@ PYEOF
 
 # Send Telegram summary
 TG_MSG=$(cat /tmp/argus-tg-summary.txt 2>/dev/null || echo "DVS Brief $DATE: no data")
-timeout "$TIMEOUT_VAL" hermes chat --non-interactive -q "Send to Donny on Telegram: ${TG_MSG}" --provider openrouter --model "$MODEL_NAME" 2>/dev/null || echo "[WARN] TG send failed"
+timeout "$TIMEOUT_VAL" hermes chat -Q -q "Send to Donny on Telegram: ${TG_MSG}" --provider openrouter --model "$MODEL_NAME" 2>/dev/null || echo "[WARN] TG send failed"
 
 # Git sync
 cd "$WIKI" && git add . && git commit -m "Argus Brief $DATE" && git push origin main 2>/dev/null || echo "[WARN] Git sync failed"
