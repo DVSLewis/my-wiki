@@ -104,6 +104,7 @@ POSTS_CONTENT=$(cat "$POSTS_FILE" 2>/dev/null || echo "")
 
 python3 - <<PYEOF > "$SCORED_FILE"
 import json, sys, re, urllib.request, urllib.error
+import time as _time
 
 posts_raw = """$POSTS_CONTENT"""
 lines = [l.strip() for l in posts_raw.strip().split('\n') if l.strip()]
@@ -144,22 +145,28 @@ req = urllib.request.Request(
     method="POST"
 )
 
-try:
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.loads(resp.read().decode())
-        output = data["choices"][0]["message"]["content"].strip()
-        json_match = re.search(r'\[.*\]', output, re.DOTALL)
-        if json_match:
-            scored = json.loads(json_match.group())
-            print(json.dumps({"posts": scored, "total_input": len(posts)}))
+for _attempt in range(3):
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode())
+            output = data["choices"][0]["message"]["content"].strip()
+            json_match = re.search(r'\[.*\]', output, re.DOTALL)
+            if json_match:
+                scored = json.loads(json_match.group())
+                print(json.dumps({"posts": scored, "total_input": len(posts)}))
+                break
+            else:
+                raise Exception("No JSON in response")
+    except Exception as e:
+        if _attempt < 2:
+            sys.stderr.write(f"[WARN] Scoring attempt {_attempt+1} failed: {e} — retrying in 10s\n")
+            _time.sleep(10)
         else:
-            raise Exception("No JSON in response")
-except Exception as e:
-    sys.stderr.write(f"[ERROR] Scoring: {e}\n")
-    fallback = [{"handle": p.get("HANDLE",""), "title": p.get("TITLE",""), "link": p.get("LINK",""),
-                 "score": 5, "category": "Uncategorized", "summary": p.get("SUMMARY", p.get("TITLE",""))}
-                for p in posts]
-    print(json.dumps({"posts": fallback, "total_input": len(posts), "error": str(e)}))
+            sys.stderr.write(f"[ERROR] Scoring failed after 3 attempts: {e}\n")
+            fallback = [{"handle": p.get("HANDLE",""), "title": p.get("TITLE",""), "link": p.get("LINK",""),
+                         "score": 5, "category": "Uncategorized", "summary": p.get("SUMMARY", p.get("TITLE",""))}
+                        for p in posts]
+            print(json.dumps({"posts": fallback, "total_input": len(posts), "error": str(e)}))
 PYEOF
 
 mkdir -p "${WIKI}/raw/daily-inbox"
