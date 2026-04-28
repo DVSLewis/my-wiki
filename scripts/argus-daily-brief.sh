@@ -244,7 +244,7 @@ LLM_API_KEY=$ORKEY \
 LLM_MODEL=openrouter/anthropic/claude-haiku-4.5 \
 LLM_PROVIDER=openai \
 LLM_ENDPOINT=https://openrouter.ai/api/v1 \
-python3 /tmp/cognee_block.py
+python3 /root/workspace/my-wiki/scripts/cognee_block.py
 
 TG_MSG=$(cat /tmp/argus-tg-summary.txt 2>/dev/null || echo "DVS Brief ${DATE}: no data")
 timeout "$TIMEOUT_VAL" /root/.hermes/hermes-agent/venv/bin/hermes chat -Q -q "Send to Donny on Telegram: ${TG_MSG}" \
