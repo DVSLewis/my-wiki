@@ -103,7 +103,7 @@ SCORED_FILE="/tmp/argus-scored-${DATE}.json"
 POSTS_CONTENT=$(cat "$POSTS_FILE" 2>/dev/null || echo "")
 
 python3 - <<PYEOF > "$SCORED_FILE"
-import json, subprocess, sys, re
+import json, sys, re, urllib.request, urllib.error
 
 posts_raw = """$POSTS_CONTENT"""
 lines = [l.strip() for l in posts_raw.strip().split('\n') if l.strip()]
@@ -121,25 +121,39 @@ if not posts:
     print(json.dumps({"posts": [], "error": "no signals found"}))
     sys.exit(0)
 
-prompt = f"You are Argus, an intelligence analyst for the DVS Agent Swarm. Score each signal 1-10 for relevance to Ethereum, DAOs, AI agents, Gnosis ecosystem, and Web3 public goods. Return ONLY a JSON array of objects with keys: handle, title, link, score, category, summary. Signals:\n"
+prompt = "You are Argus, an intelligence analyst for the DVS Agent Swarm. Score each signal 1-10 for relevance to Ethereum, DAOs, AI agents, Gnosis ecosystem, and Web3 public goods. Return ONLY a JSON array of objects with keys: handle, title, link, score, category, summary. Signals:\n"
 for i, p in enumerate(posts[:25]):
     prompt += f"{i+1}. {p.get('HANDLE')} — {p.get('TITLE')} | {p.get('LINK')}\n"
 
+api_key = """$ORKEY"""
+payload = json.dumps({
+    "model": "google/gemini-2.0-flash-001",
+    "max_tokens": 2000,
+    "messages": [{"role": "user", "content": prompt}]
+}).encode()
+
+req = urllib.request.Request(
+    "https://openrouter.ai/api/v1/chat/completions",
+    data=payload,
+    headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://github.com/DVSLewis/my-wiki",
+        "X-Title": "DVS Argus Agent"
+    },
+    method="POST"
+)
+
 try:
-    res = subprocess.run(
-        ["timeout", "${TIMEOUT_VAL}", "/root/.hermes/hermes-agent/venv/bin/hermes", "chat", "-Q", "-q", prompt,
-         "--provider", "openrouter", "--model", "${MODEL_NAME}"],
-        capture_output=True, text=True, timeout=65
-    )
-    if res.returncode != 0:
-        raise Exception(f"Hermes failed: {res.returncode}")
-    output = res.stdout.strip()
-    json_match = re.search(r'\[.*\]', output, re.DOTALL)
-    if json_match:
-        scored = json.loads(json_match.group())
-        print(json.dumps({"posts": scored, "total_input": len(posts)}))
-    else:
-        raise Exception("No JSON in LLM output")
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read().decode())
+        output = data["choices"][0]["message"]["content"].strip()
+        json_match = re.search(r'\[.*\]', output, re.DOTALL)
+        if json_match:
+            scored = json.loads(json_match.group())
+            print(json.dumps({"posts": scored, "total_input": len(posts)}))
+        else:
+            raise Exception("No JSON in response")
 except Exception as e:
     sys.stderr.write(f"[ERROR] Scoring: {e}\n")
     fallback = [{"handle": p.get("HANDLE",""), "title": p.get("TITLE",""), "link": p.get("LINK",""),
