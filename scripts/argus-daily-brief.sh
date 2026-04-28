@@ -122,7 +122,7 @@ if not posts:
     sys.exit(0)
 
 prompt = f"You are Argus, an intelligence analyst for the DVS Agent Swarm. Score each signal 1-10 for relevance to Ethereum, DAOs, AI agents, Gnosis ecosystem, and Web3 public goods. Return ONLY a JSON array of objects with keys: handle, title, link, score, category, summary. Signals:\n"
-for i, p in enumerate(posts[:50]):
+for i, p in enumerate(posts[:25]):
     prompt += f"{i+1}. {p.get('HANDLE')} — {p.get('TITLE')} | {p.get('LINK')}\n"
 
 try:
