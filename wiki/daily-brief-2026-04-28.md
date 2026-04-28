@@ -1,10 +1,10 @@
 # Daily Brief — 2026-04-28
 
-> Generated: 2026-04-28 12:26 CEST
-> Signals reviewed: 54
+> Generated: 2026-04-28 12:44 CEST
+> Signals reviewed: 0
 > High signal (≥7): 0
 > Inbox (≥8): 0
-> Status: [ERROR] No JSON in response
+> Status: [ERROR] file read fail
 
 ---
 
