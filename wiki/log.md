@@ -96,3 +96,4 @@ Sources visited:
   vocabulary, structural habits, tonal range, thematic fingerprints, anti-patterns,
   calibration checklist, and exemplar sentences
 - Updated index.md (total pages: 13), added Apollo section
+[2026-04-28 10:57 CEST] ARGUS | daily-brief | complete | /root/workspace/my-wiki/wiki/daily-brief-2026-04-28.md

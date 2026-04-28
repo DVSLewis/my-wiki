@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # argus-daily-brief.sh — DVS Argus Daily Intelligence Brief Pipeline
-# Non-interactive, timeout-safe, Zo API fallback
+# Tavily-native fetch replacing dead RSSHub feeds
+# Non-interactive, timeout-safe
 
 set -o pipefail
 
@@ -10,12 +11,11 @@ TIMESTAMP="$(TZ=Europe/Berlin date '+%Y-%m-%d %H:%M %Z')"
 WIKI="/root/workspace/my-wiki"
 BRIEF_OUT="${WIKI}/wiki/daily-brief-${DATE}.md"
 INBOX_OUT="${WIKI}/raw/daily-inbox/${DATE}.md"
-RSSHUB_BASE="https://rsshub.app/twitter/user"
 TELEGRAM_CHAT_ID="6127567978"
 
 MODEL_NAME="google/gemini-2.0-flash-001"
-TIMEOUT_VAL="60s"
-CURL_OPTS="--max-time 20 --retry 3 --retry-delay 2 -sf"
+TIMEOUT_VAL="60"
+CUTOFF_HOURS=36
 
 exec > >(tee -a "$LOG") 2>&1
 
@@ -24,89 +24,81 @@ echo "=============================================="
 echo "ARGUS BRIEF — ${TIMESTAMP}"
 echo "=============================================="
 
-# Account tiers
 TIER1="VitalikButerin karpathy koeppelmann timbeiko samczsun gakonst superphiz hudsonjameson"
 TIER2="shivsakhuja echinstitute ethereumfndn AustinGriffiths cyrilXBT"
 TIER3="aboutcircles GnosisDAO gnosischain safe gnosisguild cowswap kylearojas thedaofund chaskin22 etheconomiczone"
-ALL_ACCOUNTS="$TIER1 $TIER2 $TIER3"
 
-# Fetch RSS feeds
-FEED_DIR="/tmp/argus-feeds-${DATE}"
-mkdir -p "$FEED_DIR"
+source /root/.hermes/.env 2>/dev/null || true
+OPENAI_KEY=$(grep "^OPENAI_API_KEY=" /root/.hermes/.env | tail -1 | cut -d'=' -f2)
+ORKEY=$(grep "^OPENROUTER_API_KEY=" /root/.hermes/.env | tail -1 | cut -d'=' -f2)
+TAVILY_KEY=$(grep "^TAVILY_API_KEY=" /root/.hermes/.env | tail -1 | cut -d'=' -f2)
 
-fetch_feed() {
-    local handle="$1"
-    local url="${RSSHUB_BASE}/${handle}"
-    local out="${FEED_DIR}/${handle}.xml"
-    if curl $CURL_OPTS "$url" -o "$out" 2>/dev/null && [ -s "$out" ]; then
-        echo "[OK] $handle"
-    else
-        echo "[SKIP] $handle"
-        echo "" > "$out"
-    fi
-}
-
-echo "--- Fetching RSS feeds ---"
-for handle in $ALL_ACCOUNTS; do
-    fetch_feed "$handle" &
-done
-wait
-
-# Parse posts
 POSTS_FILE="/tmp/argus-posts-${DATE}.txt"
 > "$POSTS_FILE"
 
-parse_feed() {
-    local handle="$1"
-    local feed="${FEED_DIR}/${handle}.xml"
-    [ ! -s "$feed" ] && return
-    python3 - 2>/dev/null <<PYEOF
-import xml.etree.ElementTree as ET
+echo "--- Fetching signals via Tavily ---"
+
+python3 - <<PYEOF >> "$POSTS_FILE"
+import os, json, sys
 from datetime import datetime, timezone, timedelta
-from email.utils import parsedate_to_datetime
+from tavily import TavilyClient
 
-handle = "$handle"
-feed_file = "$feed"
-cutoff = datetime.now(timezone.utc) - timedelta(hours=36)
+tavily = TavilyClient(api_key="${TAVILY_KEY}")
+cutoff = datetime.now(timezone.utc) - timedelta(hours=${CUTOFF_HOURS})
 
-try:
-    tree = ET.parse(feed_file)
-    root = tree.getroot()
-    ns = {'atom': 'http://www.w3.org/2005/Atom'}
-    items = root.findall('.//item') or root.findall('.//atom:entry', ns)
-    for item in items[:10]:
-        title_el = item.find('title') or item.find('atom:title', ns)
-        link_el = item.find('link') or item.find('atom:link', ns)
-        date_el = item.find('pubDate') or item.find('published') or item.find('atom:published', ns)
-        title = title_el.text if title_el is not None else ''
-        link = ''
-        if link_el is not None:
-            link = link_el.text if link_el.text else (link_el.get('href', '') if hasattr(link_el, 'get') else '')
-        date_str = date_el.text if date_el is not None else ''
-        if not title or len(title.strip()) < 5:
-            continue
-        try:
-            pub_date = parsedate_to_datetime(date_str)
-            if pub_date < cutoff:
-                continue
-        except Exception:
-            pass
-        title = title.strip().replace('\n', ' ')[:200]
-        link = link.strip() if link else 'https://x.com/' + handle
-        print(f"HANDLE={handle}|||TITLE={title}|||LINK={link}")
-except Exception:
-    pass
+queries = [
+    "Ethereum protocol news Vitalik Buterin",
+    "Ethereum staking consensus timbeiko superphiz hudsonjameson",
+    "Ethereum security samczsun gakonst",
+    "AI agents blockchain Ethereum karpathy",
+    "AI Ethereum convergence x402 EIP",
+    "Gnosis DAO GnosisChain Safe Cow Protocol",
+    "koeppelmann Gnosis ecosystem update",
+    "DAO governance public goods Ethereum 2026",
+    "ETHis 2026 Ethereum event Munich",
+    "DeFi Ethereum protocol update 2026",
+    "ReFi regenerative finance DAO",
+]
+
+results = []
+for query in queries:
+    try:
+        res = tavily.search(query, max_results=5, days=2)
+        for r in res.get("results", []):
+            url = r.get("url", "")
+            title = r.get("title", "").strip()
+            content = r.get("content", "").strip()[:300]
+            if title and len(title) > 10:
+                handle = "web"
+                if "x.com/" in url or "twitter.com/" in url:
+                    parts = url.split("/")
+                    handle = "@" + parts[3] if len(parts) > 3 else "@web"
+                results.append({
+                    "handle": handle,
+                    "title": title,
+                    "link": url,
+                    "summary": content,
+                    "query": query
+                })
+    except Exception as e:
+        sys.stderr.write(f"[WARN] Tavily query failed: {query} — {e}\n")
+
+seen = set()
+unique = []
+for r in results:
+    if r["link"] not in seen:
+        seen.add(r["link"])
+        unique.append(r)
+
+for r in unique:
+    print(f"HANDLE={r['handle']}|||TITLE={r['title']}|||LINK={r['link']}|||SUMMARY={r['summary']}")
+
+sys.stderr.write(f"[ARGUS] Tavily fetch complete: {len(unique)} unique signals\n")
 PYEOF
-}
-
-for handle in $ALL_ACCOUNTS; do
-    parse_feed "$handle" >> "$POSTS_FILE"
-done
 
 POST_COUNT=$(wc -l < "$POSTS_FILE" | tr -d ' ')
-echo "Posts found: $POST_COUNT"
+echo "Signals found: $POST_COUNT"
 
-# Score posts
 SCORED_FILE="/tmp/argus-scored-${DATE}.json"
 POSTS_CONTENT=$(cat "$POSTS_FILE" 2>/dev/null || echo "")
 
@@ -126,16 +118,17 @@ for line in lines:
         posts.append(parts)
 
 if not posts:
-    print(json.dumps({"posts": [], "error": "no posts found"}))
+    print(json.dumps({"posts": [], "error": "no signals found"}))
     sys.exit(0)
 
-prompt = f"You are Argus, an intelligence analyst. Score each post 1-10 for relevance to Ethereum, DAOs, AI, and Gnosis. Return ONLY a JSON array of objects with keys: handle, title, link, score, category, summary. Posts:\n"
+prompt = f"You are Argus, an intelligence analyst for the DVS Agent Swarm. Score each signal 1-10 for relevance to Ethereum, DAOs, AI agents, Gnosis ecosystem, and Web3 public goods. Return ONLY a JSON array of objects with keys: handle, title, link, score, category, summary. Signals:\n"
 for i, p in enumerate(posts[:50]):
-    prompt += f"{i+1}. @{p.get('HANDLE')} — {p.get('TITLE')} | {p.get('LINK')}\n"
+    prompt += f"{i+1}. {p.get('HANDLE')} — {p.get('TITLE')} | {p.get('LINK')}\n"
 
 try:
     res = subprocess.run(
-        ["timeout", "$TIMEOUT_VAL", "hermes", "chat", "-Q", "-q", prompt, "--provider", "openrouter", "--model", "$MODEL_NAME"],
+        ["timeout", "${TIMEOUT_VAL}", "hermes", "chat", "-Q", "-q", prompt,
+         "--provider", "openrouter", "--model", "${MODEL_NAME}"],
         capture_output=True, text=True, timeout=65
     )
     if res.returncode != 0:
@@ -149,18 +142,20 @@ try:
         raise Exception("No JSON in LLM output")
 except Exception as e:
     sys.stderr.write(f"[ERROR] Scoring: {e}\n")
-    fallback = [{"handle": p.get("HANDLE",""), "title": p.get("TITLE",""), "link": p.get("LINK",""), "score": 5, "category": "Uncategorized", "summary": p.get("TITLE","")} for p in posts]
+    fallback = [{"handle": p.get("HANDLE",""), "title": p.get("TITLE",""), "link": p.get("LINK",""),
+                 "score": 5, "category": "Uncategorized", "summary": p.get("SUMMARY", p.get("TITLE",""))}
+                for p in posts]
     print(json.dumps({"posts": fallback, "total_input": len(posts), "error": str(e)}))
 PYEOF
 
-# Render brief
+mkdir -p "${WIKI}/raw/daily-inbox"
 python3 - <<PYEOF
 import json, sys
-from datetime import datetime
 
 try:
-    with open("$SCORED_FILE") as f: data = json.load(f)
-except: data = {"posts": [], "error": "file read fail"}
+    with open("${SCORED_FILE}") as f: data = json.load(f)
+except:
+    data = {"posts": [], "error": "file read fail"}
 
 posts = data.get("posts", [])
 error = data.get("error", "")
@@ -168,37 +163,75 @@ brief_posts = [p for p in posts if p.get("score", 0) >= 7]
 inbox_posts = [p for p in posts if p.get("score", 0) >= 8]
 
 lines = [
-    f"# Daily Brief — $DATE",
+    f"# Daily Brief — ${DATE}",
     "",
-    f"> Generated: $TIMESTAMP",
+    f"> Generated: ${TIMESTAMP}",
+    f"> Signals reviewed: {len(posts)}",
+    f"> High signal (≥7): {len(brief_posts)}",
+    f"> Inbox (≥8): {len(inbox_posts)}",
     f"> Status: {'[ERROR] ' + error if error else 'Healthy'}",
+    "",
+    "---",
     ""
 ]
+
 if not brief_posts:
     lines.append("*No high-signal posts today.*")
 else:
     for p in sorted(brief_posts, key=lambda x: x.get('score', 0), reverse=True):
-        lines.append(f"- [{p.get('score')}/10] **@{p.get('handle')}**: {p.get('summary')} [Link]({p.get('link')})")
+        score = p.get('score', 0)
+        handle = p.get('handle', '')
+        title = p.get('title', '')
+        link = p.get('link', '')
+        category = p.get('category', '')
+        summary = p.get('summary', '')
+        lines.append(f"## [{score}/10] {title}")
+        lines.append(f"**{handle}** | {category}")
+        lines.append(f"{summary}")
+        lines.append(f"[Source]({link})")
+        lines.append("")
 
-with open("$BRIEF_OUT", 'w') as f: f.write('\n'.join(lines))
+with open("${BRIEF_OUT}", 'w') as f:
+    f.write('\n'.join(lines))
 
 if inbox_posts:
-    with open("$INBOX_OUT", 'w') as f:
-        f.write(f"# High-Signal — $DATE\n\n")
+    with open("${INBOX_OUT}", 'w') as f:
+        f.write(f"# Inbox — ${DATE}\n\n")
         for p in inbox_posts:
             f.write(f"## {p.get('handle')}\n{p.get('summary')}\n{p.get('link')}\n\n")
 
-tg_summary = f"DVS Brief $DATE: {len(brief_posts)} signals. " + (f"Errors: {error}" if error else "System nominal.")
-with open("/tmp/argus-tg-summary.txt", 'w') as f: f.write(tg_summary)
+tg_summary = f"DVS Brief ${DATE}: {len(brief_posts)} signals. " + (f"Errors: {error}" if error else "System nominal.")
+with open("/tmp/argus-tg-summary.txt", 'w') as f:
+    f.write(tg_summary)
+
+print(f"[ARGUS] Brief written: {len(brief_posts)} signals, {len(inbox_posts)} inbox")
 PYEOF
 
-# Send Telegram summary
-TG_MSG=$(cat /tmp/argus-tg-summary.txt 2>/dev/null || echo "DVS Brief $DATE: no data")
-timeout "$TIMEOUT_VAL" hermes chat -Q -q "Send to Donny on Telegram: ${TG_MSG}" --provider openrouter --model "$MODEL_NAME" 2>/dev/null || echo "[WARN] TG send failed"
+OPENAI_KEY=$(grep "^OPENAI_API_KEY=" /root/.hermes/.env | tail -1 | cut -d'=' -f2)
+ORKEY=$(grep "^OPENROUTER_API_KEY=" /root/.hermes/.env | tail -1 | cut -d'=' -f2)
 
-# Git sync
-cd "$WIKI" && git add . && git commit -m "Argus Brief $DATE" && git push origin main 2>/dev/null || echo "[WARN] Git sync failed"
+COGNEE_SKIP_CONNECTION_TEST=true \
+OPENAI_API_KEY=$OPENAI_KEY \
+EMBEDDING_PROVIDER=openai \
+EMBEDDING_MODEL=text-embedding-3-small \
+EMBEDDING_API_KEY=$OPENAI_KEY \
+EMBEDDING_DIMENSIONS=1536 \
+LLM_API_KEY=$ORKEY \
+LLM_MODEL=openrouter/anthropic/claude-haiku-4.5 \
+LLM_PROVIDER=openai \
+LLM_ENDPOINT=https://openrouter.ai/api/v1 \
+python3 /tmp/cognee_block.py
 
-# Cleanup
-rm -rf "$FEED_DIR" /tmp/argus-posts-${DATE}.txt "$SCORED_FILE" /tmp/argus-tg-summary.txt 2>/dev/null
-echo "DONE."
+TG_MSG=$(cat /tmp/argus-tg-summary.txt 2>/dev/null || echo "DVS Brief ${DATE}: no data")
+timeout "$TIMEOUT_VAL" hermes chat -Q -q "Send to Donny on Telegram: ${TG_MSG}" \
+  --provider openrouter --model "$MODEL_NAME" 2>/dev/null || echo "[WARN] TG send failed"
+
+echo "[${TIMESTAMP}] ARGUS | daily-brief | complete | ${BRIEF_OUT}" >> "${WIKI}/wiki/log.md"
+
+cd "$WIKI" && git add . && git commit -m "Argus Brief ${DATE}" && git push origin main 2>/dev/null || echo "[WARN] Git sync failed"
+
+rm -f /tmp/argus-posts-${DATE}.txt /tmp/argus-scored-${DATE}.json /tmp/argus-tg-summary.txt
+
+echo ""
+echo "ARGUS COMPLETE — ${TIMESTAMP}"
+echo "=============================================="
