@@ -9,12 +9,12 @@ LOG="/tmp/argus-brief.log"
 DATE="$(TZ=Europe/Berlin date +%Y-%m-%d)"
 TIMESTAMP="$(TZ=Europe/Berlin date '+%Y-%m-%d %H:%M %Z')"
 WIKI="/root/workspace/my-wiki"
-BRIEF_OUT="${WIKI}/wiki/daily-brief-${DATE}.md"
+export BRIEF_OUT="${WIKI}/wiki/daily-brief-${DATE}.md"
 INBOX_OUT="${WIKI}/raw/daily-inbox/${DATE}.md"
 TELEGRAM_CHAT_ID="6127567978"
 
 MODEL_NAME="google/gemini-2.0-flash-001"
-TIMEOUT_VAL="60"
+TIMEOUT_VAL="120"
 CUTOFF_HOURS=36
 
 exec > >(tee -a "$LOG") 2>&1
