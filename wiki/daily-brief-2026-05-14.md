@@ -1,0 +1,119 @@
+# Argus Daily Brief — 2026-05-14
+> Generated: 2026-05-14 20:01 UTC
+> Signals: 115
+
+- **VitalikButerin**: Ethereum: Vitalik Buterin Outlines a 2026 Roadmap for ... — https://www.reddit.com/r/CryptoCurrency/comments/1qnnsyg/ethereum_vitalik_buterin_outlines_a_2026_roadmap/
+- **VitalikButerin**: LATEST: Vitalik Buterin says Ethereum will ship native account ... — https://www.facebook.com/CoinMarketCap/videos/latest-vitalik-buterin-says-ethereum-will-ship-native-account-abstraction-within/1912604879340564/
+- **VitalikButerin**: Vitalik Reveals Ethereum's 2026 "God Mode ... — https://www.binance.com/en/square/post/35381225166730
+- **VitalikButerin**: Ethereum has long talked a big game. Now it’s time for the second biggest blockchain to deliver | Fortune — https://fortune.com/crypto/2026/01/05/ethereum-2026-vitalik-buterin-fork-in-the-road/
+- **VitalikButerin**: Vitalik Buterin maps Ethereum's 2026 rebellion against centralised ... — https://finance.yahoo.com/news/vitalik-buterin-maps-ethereum-2026-100825859.html
+- **karpathy**: [Alert] Tech Pulse May 23: Karpathy's "Agentic Engineering" & Quantum Switching | Tech Bytes — https://techbytes.app/tech-pulse-daily/2026/may/23/
+- **karpathy**: How to Create a Token on Ethereum (2026) - YouTube — https://www.youtube.com/watch?v=vRLUY9bE568
+- **karpathy**: Karpathy's new anxiety: idle tokens, not idle GPUs. The bottleneck ... — https://www.instagram.com/reel/DXQV2vVjs9x/
+- **karpathy**: Andrej Karpathy says 2026 will be the Slopacolypse. And AI ... - Reddit — https://www.reddit.com/r/agi/comments/1qoeoeg/andrej_karpathy_says_2026_will_be_the/
+- **karpathy**: Ethereum Foundation Launches Clear Signing Standard — https://quasa.io/media/ethereum-foundation-launches-clear-signing-standard-finally-putting-an-end-to-blind-signing-and-billion-dollar-drains
+- **koeppelmann**: Martin Köppelmann: Gnosis - The Ethereum Prediction Market — https://www.youtube.com/watch?v=AKcd9YUeFD0
+- **koeppelmann**: Ethereum (ETH) Price Analysis: May 2026 Could Bring Extreme Volatility — What Traders Need to Know | MEXC News — https://www.mexc.co/en-IN/news/1066249
+- **koeppelmann**: Current price of Ethereum for May 12, 2026 - Fortune — https://fortune.com/article/price-of-ethereum-05-12-2026/
+- **koeppelmann**: Will The Ethereum Economic Zone (EEZ) Rebuild $ETH Dominance? — https://open.spotify.com/episode/3jIQINuzW3BccMxyHlVhux
+- **koeppelmann**: Will The Ethereum Economic Zone (EEZ) Rebuild $ETH Dominance? — https://play.headliner.app/podcast/f405bce4ab6f43439892b80e3a2d34be/episode/64ec87d1-8254-4280-9bae-7a9d8a5cb7d4
+- **timbeiko**: Tim Beiko - People in crypto | IQ.wiki — https://iq.wiki/wiki/tim-beiko
+- **timbeiko**: Ethereum Foundation Details Glamsterdam Upgrade Progress, Announces Protocol Cluster Leadership Chan... - Wu Blockchain — https://www.wublockchain.xyz/news/ethereum-foundation-glamsterdam-upgrade-progress-protocol-cluster-leadership-19087
+- **timbeiko**: The Ethereum Foundation published its May 2026 Pro | KuCoin — https://www.kucoin.com/news/trends/ETH/6a035ee9d064730007b51f60
+- **timbeiko**: #Ethereum Foundation Reports Progress on Glamsterdam Upgrade ... — https://x.com/thecryptobasic/status/2054107385426510211
+- **timbeiko**: Protocol Cluster Updates: May 2026 | Ethereum Foundation Blog — https://blog.ethereum.org/2026/05/11/protocol-update-may-26
+- **samczsun**: samczsun — https://x.com/samczsun/status/1922657164318978215
+- **samczsun**: Prominent crypto researcher Samczsun steps down from Paradigm to focus on SEAL 911 security initiative — https://www.theblock.co/post/349698/prominent-crypto-researcher-samczsun-steps-down-from-paradigm-to-focus-on-seal-911-security-initiative
+- **samczsun**: Ethereum (ETH) Price Analysis: May 2026 Could Bring ... — https://www.mexc.com/news/1066249
+- **samczsun**: samczsun — https://samczsun.com/
+- **samczsun**: Ethereum price on May 13, 2026 at 12am EDT Prediction Market — https://robinhood.com/us/en/prediction-markets/crypto/events/ethereum-price-on-may-13-2026-at-12am-edt-may-11-2026/
+- **gakonst**: ETH Price Prediction: Why Ethereum Could Hit $3,000 in May 2026 — https://www.youtube.com/watch?v=YTCA_0PVPR8
+- **gakonst**: Ethereum Price Prediction 2026 — https://bitcoinfoundation.org/news/ethereum/ethereum-price-prediction-2026-will-eth-reach-new-all-time-highs-in-may/
+- **gakonst**: Current price of Ethereum for May 11, 2026 - Fortune — https://fortune.com/article/price-of-ethereum-05-11-2026/
+- **gakonst**: May 9, 2026: Ethereum price on May 9, 2026 at 4am EDT Prediction Market — https://robinhood.com/us/en/prediction-markets/crypto/events/ethereum-price-on-may-9-2026-at-4am-edt-may-09-2026/
+- **gakonst**: Daily General Discussion May 13, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1tbpq6u/daily_general_discussion_may_13_2026/
+- **superphiz**: Daily General Discussion May 13, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1tbpq6u/daily_general_discussion_may_13_2026/
+- **superphiz**: Superphiz Presents: Responsible & Sustainable Staking on Ethereum — https://www.youtube.com/watch?v=7gJEqBprjko
+- **superphiz**: Feb 2025: Ethereum at $3000 May 2026 - Binance — https://www.binance.com/en/square/post/322407195311217
+- **superphiz**: Ethereum (ETH) Price Prediction May 2026: What Charts, Whales ... — https://www.mexc.com/learn/article/ethereum-eth-price-prediction-may-2026-what-charts-whales-and-catalysts-are-telling-traders/1
+- **superphiz**: Ethereum Price Prediction May 2026: ETH Enters Its Strongest Month Of The Year With A CRT Sweep Already Done — https://cryptorank.io/news/feed/5b812-ethereum-price-prediction-may-2026-eth-enters-its-strongest-month-of-the-year-with-a-crt-sweep-already-done
+- **hudsonjameson**: Reel by aylabernal8641 · May 3, 2026 - Instagram — https://www.instagram.com/reel/DX4u6zwOZLh/
+- **hudsonjameson**: Hudson Jameson (@hudsonjameson) / Highlights / X - Twitter — https://x.com/hudsonjameson/highlights
+- **hudsonjameson**: Hudson Jameson (@hudsonjameson) / Posts / X - Twitter — https://x.com/hudsonjameson?lang=en
+- **hudsonjameson**: $ETH Surges as Pectra Upgrade Goes Live! (May 2026) - YouTube — https://www.youtube.com/watch?v=VF2GwjrdMa8
+- **hudsonjameson**: Hudson Jameson: It's time to market Ethereum to the world - Reddit — https://www.reddit.com/r/ethtrader/comments/em9vd4/hudson_jameson_its_time_to_market_ethereum_to_the/
+- **shivsakhuja**: The Future of NFTs with Shiv Sakhuja from Magik Labs | Ep. 147 — https://www.youtube.com/watch?v=D86d73tICAU
+- **shivsakhuja**: Spartan Labs (@TheSpartanLabs) / Posts / X - Twitter — https://x.com/TheSpartanLabs
+- **shivsakhuja**: How to Be a Successful Yield Farmer in 15 Steps - Altcoin Buzz — https://www.altcoinbuzz.io/bitcoin-and-crypto-guide/how-to-be-a-successful-yield-farmer-in-15-steps/
+- **shivsakhuja**: Shiv Sakhuja - Athina AI (YC W23) - Gooseworks (YC W23) — https://www.linkedin.com/in/shivsakhuja
+- **shivsakhuja**: The Future of NFTs: A Visual Exploration into the REAL use cases — https://substack.com/home/post/p-69333176?utm_campaign=post&utm_medium=web
+- **echinstitute**: ECH Institute - What's New for ETH Cluj 2026? - YouTube — https://www.youtube.com/watch?v=bcFiI684C8A
+- **echinstitute**: ECH Institute Gets a Shoutout on Ethereum Builders Live - YouTube — https://www.youtube.com/watch?v=bPUali1z3fs
+- **echinstitute**: Looking forward to this session with @ECHInstitute We will talk ... — https://x.com/cryptomastery_/status/2053922187976057088
+- **echinstitute**: EIP Editing Office Hour (EIP + ERC ) Meeting #99 | May 12, 2026 — https://x.com/ECHInstitute/status/2054220514395386109
+- **echinstitute**: Join All Core Devs - Testing 79! Monday, May 11, 2026, 14:00 UTC ... — https://x.com/ECHInstitute/status/2053830335360799205
+- **ethereumfndn**: Ethereum (ETH) Price Prediction May 2026: What Charts, Whales ... — https://www.mexc.com/learn/article/ethereum-eth-price-prediction-may-2026-what-charts-whales-and-catalysts-are-telling-traders/1
+- **ethereumfndn**: What price will Ethereum hit in May? - Polymarket — https://polymarket.com/event/what-price-will-ethereum-hit-in-may-2026
+- **ethereumfndn**: May 13, 2026: Ethereum price on May 14, 2026 at 12am EDT Prediction Market — https://robinhood.com/us/en/prediction-markets/crypto/events/ethereum-price-on-may-14-2026-at-12am-edt-may-12-2026/
+- **ethereumfndn**: Ethereum price on May 13, 2026 at 7pm EDT - Crypto - Robinhood — https://robinhood.com/us/en/prediction-markets/crypto/events/ethereum-price-on-may-13-2026-at-7pm-edt-may-13-2026/
+- **ethereumfndn**: Current price of Ethereum for May 12, 2026 - Fortune — https://fortune.com/article/price-of-ethereum-05-12-2026/
+- **AustinGriffiths**: Austin Griffith (@austingriffith) / Posts / X - Twitter — https://x.com/austingriffith
+- **AustinGriffiths**: Austin Griffith I Beginners Track Welcome & Speedrun Ethereum ... — https://www.youtube.com/watch?v=5A_JJTQbyGg
+- **AustinGriffiths**: Austin Griffith — https://austingriffith.com/
+- **AustinGriffiths**: Ethereum Foundation's Austin Griffith: AI Will Make the Cypherpunk ... — https://www.bitget.com/asia/news/detail/12560605378695
+- **AustinGriffiths**: Ethereum Foundation's Austin Griffith: AI Will Make the Cypherpunk ... — https://www.binance.com/en/square/post/315158448129361
+- **cyrilXBT**: ETH Holds $2000, But Q2 Bulls Face a Catch | MEXC News — https://www.mexc.com/news/1021436
+- **cyrilXBT**: Ethereum Price Prediction: Why ETH Still Looks Weak — https://cryptonews.net/news/ethereum/32617973/
+- **cyrilXBT**: Daily General Discussion May 10, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1t8xf85/daily_general_discussion_may_10_2026/
+- **cyrilXBT**: Bitcoin Falls To $70,000 As Ethereum, XRP, Dogecoin Drop 1% On ... — https://www.sahmcapital.com/news/content/bitcoin-falls-to-70000-as-ethereum-xrp-dogecoin-drop-1-on-geopolitical-uncertainty-2026-04-13
+- **cyrilXBT**: Is Ethereum Near a Bottom? Analysts Weigh Key Signals - BeInCrypto — https://beincrypto.com/ethereum-price-bottom-2026-scenarios/
+- **aboutcircles**: Circle’s 2026 Plan: Revolutionizing Stablecoins for Massive Institutional Adoption! | MEXC News — https://www.mexc.co/news/594916
+- **aboutcircles**: Ethereum Protocol Cluster Updates: May 2026 - Crypto Craft — https://www.cryptocraft.com/news/1397897-ethereum-protocol-cluster-updates-may-2026
+- **aboutcircles**: Circles - ETHGlobal — https://ethglobal.com/events/buenosaires/prizes/circles
+- **aboutcircles**: Circle's 2026 Roadmap: Boosting Digital Asset Integration - Phemex — https://phemex.com/news/article/circle-unveils-2026-roadmap-to-enhance-digital-asset-adoption-57332
+- **aboutcircles**: Circle Raises $222M to Build Its Own Blockchain for Stablecoins — https://www.trendingtopics.eu/circle-raises-222m-to-build-its-own-blockchain-for-stablecoins/
+- **GnosisDAO**: Gnosis Jobs & Careers - Open Positions - May 2026 - Uplers — https://www.uplers.com/company/gnosis-3773
+- **GnosisDAO**: Gnosis - RootData — https://www.rootdata.com/projects/detail/Gnosis?k=NjE%3D
+- **GnosisDAO**: Gnosis DAO treasury vote sparks Aave-style governance drama — https://www.mexc.com/news/1076655
+- **GnosisDAO**: Latest Gnosis News - (GNO) Future Outlook, Trends & Market Insights — https://coinmarketcap.com/cmc-ai/gnosis-gno/latest-updates/
+- **GnosisDAO**: Daily General Discussion May 06, 2026 : r/ethereum — https://www.reddit.com/r/ethereum/comments/1t537c3/daily_general_discussion_may_06_2026/
+- **gnosischain**: Gnosis Chain in 2026: The Payments Powerhouse ... - Hangryfeed — https://www.hangryfeed.com/insights/web3/gnosis-chain
+- **gnosischain**: Gnosis Chain (@gnosischain) / Posts / X - Twitter — https://x.com/gnosischain
+- **gnosischain**: May 2026: Incentives Update & New Court Proposal on Gnosis Chain — https://blog.kleros.io/may-2026-incentives-update-new-court-proposal-on-gnosis-chain/
+- **gnosischain**: Daily General Discussion May 13, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1tbpq6u/daily_general_discussion_may_13_2026/
+- **gnosischain**: Inside Gnosis' EEZ bet: can a governance chain become a native L2? — https://cryptonews.net/news/ethereum/32639955/
+- **safe**: Ethereum (ETH) Price Prediction May 2026: What Charts, Whales ... — https://www.mexc.com/learn/article/ethereum-eth-price-prediction-may-2026-what-charts-whales-and-catalysts-are-telling-traders/1
+- **safe**: ETH Price Prediction: Why Ethereum Could Hit $3,000 in May 2026 — https://www.youtube.com/watch?v=YTCA_0PVPR8
+- **safe**: Current price of Ethereum for May 13, 2026 - Fortune — https://fortune.com/article/price-of-ethereum-05-13-2026/
+- **safe**: Current price of Ethereum for May 12, 2026 - Fortune — https://fortune.com/article/price-of-ethereum-05-12-2026/
+- **safe**: Daily General Discussion May 13, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1tbpq6u/daily_general_discussion_may_13_2026/
+- **gnosisguild**: Daily General Discussion May 13, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1tbpq6u/daily_general_discussion_may_13_2026/
+- **gnosisguild**: May 2026: Incentives Update & New Court Proposal on Gnosis Chain — https://blog.kleros.io/may-2026-incentives-update-new-court-proposal-on-gnosis-chain/
+- **gnosisguild**: Gnosis, Zisk, and Ethereum Foundation Launch Framework to Fix ... — https://www.mexc.fm/news/990936
+- **gnosisguild**: New Ethereum project aims to fix network fragmentation ... - CoinDesk — https://www.coindesk.com/tech/2026/03/29/new-ethereum-project-aims-to-fix-network-fragmentation-and-improve-user-experience
+- **gnosisguild**: Gnosis and Zisk announce 'Ethereum Economic Zone' rollup ... — https://www.theblock.co/post/395578/gnosis-and-zisk-announce-ethereum-economic-zone-rollup-framework-with-ethereum-foundation-co-funding
+- **cowswap**: What is CowSwap? MEV Protection & Gasless Trading Guide (2026) — https://coinstancy.com/academy/guides/cowswap/
+- **cowswap**: Latest CoW Protocol (COW) News Update - CoinMarketCap — https://coinmarketcap.com/cmc-ai/cow-protocol/latest-updates/
+- **cowswap**: Daily General Discussion May 07, 2026 : r/ethereum - Reddit — https://www.reddit.com/r/ethereum/comments/1t60qpm/daily_general_discussion_may_07_2026/
+- **cowswap**: CoW Swap Halts Protocol After Website Compromise - Binance — https://www.binance.com/en/square/post/312838478467298
+- **cowswap**: Ethereum Foundation taps treasury, converts 5,000 ETH to ... — https://ambcrypto.com/ethereum-foundation-taps-treasury-converts-5000-eth-to-stablecoins-via-cow-swap/
+- **kylearojas**: Kyle Rojas | Life is good on X: "A Unified Ethereum Ecosystem. Not a Hundred Islands. Powered by the Ethereum Economic Zone." / X — https://x.com/kyleArojas/status/2046634157032222823
+- **kylearojas**: Kyle Rojas | Speaker | Consensus Miami 2026 - CoinDesk — https://consensus.coindesk.com/agenda/speaker/-kyle-rojas
+- **kylearojas**: Kyle Rojas - People in crypto | IQ.wiki — https://iq.wiki/wiki/kyle-rojas
+- **kylearojas**: Etherealize Project Introduction, Team, Financing and ... - RootData — https://www.rootdata.com/projects/detail/Etherealize?k=MTYwMjk%3D
+- **kylearojas**: Kyle Rojas - ETHDenver 2026 — https://ethdenver.com/speakers/kyle-rojas/
+- **thedaofund**: An Update As part of the @thedaofund Ethereum Security QF Round ... — https://x.com/ECHInstitute/status/2051675953760223702
+- **thedaofund**: S.10 Ep.11 $170M to Fix Ethereum Security (After Another Major Hack) — https://www.youtube.com/watch?v=7fVlsDyLxok
+- **thedaofund**: TheDAO Security Fund’s First Funding Round Goes Live with Over $1M for Ethereum Security — https://etherworld.co/thedao-security-funds-first-funding-round-goes-live-with-over-1m-for-ethereum-security/
+- **thedaofund**: Ethereum (ETH) Price Analysis: May 2026 Could Bring Extreme ... — https://www.mexc.com/news/1066249
+- **thedaofund**: 20 May 2026, 3:00 UTC @spark_sciences Fund for Radical ... — https://x.com/OctantApp/status/2051800879687258461
+- **chaskin22**: Ethereum Price Prediction May 2026: ETH Enters Its Strongest ... — https://cryptonews.net/news/ethereum/32788147/
+- **chaskin22**: Ethereum (ETH) Price Prediction May 2026: What Charts, Whales ... — https://www.mexc.com/learn/article/ethereum-eth-price-prediction-may-2026-what-charts-whales-and-catalysts-are-telling-traders/1
+- **chaskin22**: Ethereum (ETH) Price Analysis: May 2026 Could Bring Extreme ... — https://www.mexc.com/news/1066249
+- **chaskin22**: Ethereum Analysis May 2026: Vitalik Buterin, ETH ... — https://bitcoinfoundation.org/news/ethereum/ethereum-analysis-may-2026-vitalik-buterin-eth-accumulation-bullish-price-forecast/
+- **chaskin22**: Ethereum Price Prediction May 2026: ETH Enters Its Strongest ... — https://cryptorank.io/news/feed/5b812-ethereum-price-prediction-may-2026-eth-enters-its-strongest-month-of-the-year-with-a-crt-sweep-already-done
+- **etheconomiczone**: Ethereum Economic Zone Targets Layer-2 Fragmentation — https://www.mexc.com/news/998388
+- **etheconomiczone**: Ethereum (ETH) Price Analysis: May 2026 Could Bring Extreme ... — https://www.mexc.com/news/1066249
+- **etheconomiczone**: Ethereum Economic Zone launches at EthCC to tackle L2 ... — https://crypto.news/ethereum-economic-zone-launches-at-ethcc-to-tackle-l2-fragmentation-problem/
+- **etheconomiczone**: $ETH IS PREPARING FOR A HISTORICAL EXPLOSION! MAY 2026 — THE LAST CHANCE TO ENTER THIS CYCLE AT A GROWTH OF $5000  | VladCriptoBOS on Binance Square — https://www.binance.com/en/square/post/33256660338113
+- **etheconomiczone**: Ethereum Price Prediction 2026 — https://bitcoinfoundation.org/news/ethereum/ethereum-price-prediction-2026-will-eth-reach-new-all-time-highs-in-may/
