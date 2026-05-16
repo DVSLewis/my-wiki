@@ -38,8 +38,8 @@ This was a 4-hour infrastructure hardening session. Key outcomes:
 
 | Name | Schedule | Next Run | Purpose |
 |---|---|---|---|
-| Argus Watchdog | `FREQ=DAILY;BYHOUR=7;BYMINUTE=0` (07:00 PDT) | 2026-05-17 07:00 | Fallback for Argus if Hermes cron lost |
-| Athena Watchdog | `FREQ=DAILY;BYHOUR=7;BYMINUTE=35` (07:35 PDT) | 2026-05-17 07:35 | Fallback for Athena if Hermes cron lost |
+| Argus Watchdog | `FREQ=DAILY;BYHOUR=7;BYMINUTE=0` (07:00 UTC) | 2026-05-17 07:00 | Fallback for Argus if Hermes cron lost |
+| Athena Watchdog | `FREQ=DAILY;BYHOUR=7;BYMINUTE=35` (07:35 UTC) | 2026-05-17 07:35 | Fallback for Athena if Hermes cron lost |
 
 ---
 
