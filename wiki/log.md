@@ -530,3 +530,9 @@ remote
 - No new PID race errors in stderr log since patch time
 
 **Remaining risk:** If Hermes ever runs without supervisord (dev/test), the bashrc nohup lines are commented out and need to be uncommented for fallback restart. Rollback command saved at `/root/.hermes/checkpoints/rollback_20260515.txt`.
+
+## [2026-05-16 16:15] docs | Argus canonical runner spec defined
+- Spec: `wiki/runbooks/argus-canonical-runner.md`
+- Committed + pushed: `13b6e4a`
+- Canonical runner: Option B (new single-file Python)
+- Do NOT implement until manual dry-run passes
