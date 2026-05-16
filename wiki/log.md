@@ -557,3 +557,5 @@ Hermes service PID: 2926 alive ✅
 gateway.pid: 2926 ✅
 PID race errors: only pre-migration (May 15 23:18) ✅
 Next scheduled run: 2026-05-17T07:00:00+00:00
+
+## [2026-05-16 16:48] docs | DVS pan
