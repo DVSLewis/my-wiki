@@ -182,4 +182,71 @@ Canonical runner has been tested dry-run successfully. The v3 runner's `hermes g
 
 ---
 
+## [2026-05-16 17:15] CHANGE | Cron persistence risk mitigated — watchdog fallbacks created
+
+### What changed
+1. Created durable desired-state declaration: `/root/workspace/my-wiki/wiki/sync/hermes-cron-desired.json`
+2. Created Zo automations as persistent fallback watchdogs for Argus and Athena
+3. Documented the overlay filesystem persistence risk for Hermes cron jobs
+
+### Why it changed
+Hermes cron jobs (`jobs.json`) live on overlay filesystem — restart survival is UNKNOWN. If the container sandbox resets, Hermes cron reverts to baked image state and Argus/Athena schedules would be lost. No git re-hydration of cron state on restart. This was a silent single-point-of-failure for the entire DVS intelligence pipeline.
+
+### Failure Evidence
+- `/root/.hermes/cron/jobs.json` is on overlay (container ephemeral) filesystem
+- Cron jobs are NOT in git
+- No Zo automation fallback existed before this session
+- Orphaned cron entries found: `athena-weekly-synthesis` (1b4dc234acf3), `Argus Daily Brief v2` (cf97d1b5303a), `wiki-daily-backup` (e2c09bee222e)
+
+### Root Cause
+Hermes uses its own cron system with local JSON storage, not git. The sandbox overlay means any changes to `/root/` (including Hermes cron state) do not persist across container restart.
+
+### Targeted Fix
+1. Created `hermes-cron-desired.json` as durable git-tracked desired state for all active jobs
+2. Created Zo automations ( Zo-run full sessions) as persistent fallback:
+   - Argus watchdog: `FREQ=DAILY;BYHOUR=7;BYMINUTE=0` (07:00 PDT) — checks all Argus outputs exist; fires fallback if missing
+   - Athena watchdog: `FREQ=DAILY;BYHOUR=7;BYMINUTE=35` (07:35 PDT) — checks Athena synthesis exists; fires fallback if missing; blocked if Argus outputs missing
+3. Both watchdogs log results to `wiki/log.md`
+4. Updated `manifest.md`, `source-of-truth.md`, and `project-snapshots.md` with this finding
+
+### Predicted Improvement
+Even if Hermes cron is lost on restart, the watchdogs will detect missing outputs and fire the canonical runners. The `hermes-cron-desired.json` file provides a human-readable and machine-parseable reference for manual job re-creation if needed.
+
+### Risk Register
+| Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|
+| Sandbox full reset | LOW | HIGH | Watchdogs fire within 5-35min of expected time; log to wiki/log.md |
+| Hermes cron lost AND watchdog fails | LOW | MEDIUM | hermes-cron-desired.json provides manual re-create instructions |
+| Watchdog fires on false positive | LOW | LOW | Watchdog checks for output AND Telegram message_id — both must be missing |
+| Zo automation not persisted across reset | MEDIUM | HIGH | Automations are Zo-managed, not Hermes-managed — different persistence path; unverified |
+
+### Verification Evidence
+- hermes-cron-desired.json: created with all active/orphaned job IDs, schedules, expected outputs ✅
+- Argus watchdog automation: created, next_run 2026-05-17T07:00:33-07:00 ✅
+- Athena watchdog automation: created, next_run 2026-05-17T07:35:41-07:00 ✅
+- manifest.md updated with full entry ✅
+- source-of-truth.md updated ✅
+- project-snapshots.md updated ✅
+- Git committed and pushed: my-wiki `docs(sync): record cron persistence and watchdog plan` ✅
+
+### Git Commits
+| Repo | Commit | Message |
+|---|---|---|
+| DVSLewis/my-wiki | `docs(sync): record cron persistence and watchdog plan` | docs(sync): record cron persistence and watchdog plan |
+
+### Verdict
+**KEEP**
+
+### Verdict Rationale
+The combination of a git-tracked desired-state file and Zo-managed automation watchdogs provides defense-in-depth against the persistence risk. Even if Hermes cron is lost, the watchdogs will restore the pipeline within 35 minutes of expected time. The orphaned job cleanup (removing stale cron entries) will be handled in a follow-up session once the new pipeline is verified stable.
+
+### Follow-up Required
+- Monitor 2026-05-17T07:00 and 07:35 watchdog runs for:
+  - Watchdogs correctly detect healthy outputs (no action needed)
+  - wiki/log.md shows watchdog check entries
+- After 1 week of stable watchdog runs: clean up orphaned cron entries
+- After 2 weeks: re-evaluate if Hermes cron persistence has been resolved via underlying infrastructure
+
+---
+
 *Append new manifest entries above this line. Each entry must have all fields filled. Delete incomplete entries.*

@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "created": "2026-05-16",
+  "description": "Durable desired-state declaration for all active Hermes cron jobs. Source of truth for what should be running. If Hermes cron is lost on restart, use this file to re-create jobs.",
+  "jobs": [
+    {
+      "id": "42cd1df992e7",
+      "name": "argus-daily-brief",
+      "schedule": "0 7 * * *",
+      "schedule_human": "07:00 UTC daily",
+      "command": "python3 /root/.hermes/scripts/argus-daily-brief-canonical.py",
+      "description": "DVS Argus daily intelligence brief — Tavily + RSS + Reddit + X signals",
+      "last_run_verified": "2026-05-16T07:01:03+00:00",
+      "last_run_status": "ok",
+      "expected_outputs": {
+        "signals_file": "wiki/signals/YYYY-MM-DD.md",
+        "brief_file": "wiki/daily-brief/daily-brief-YYYY-MM-DD.md",
+        "inbox_file": "raw/daily-inbox/YYYY-MM-DD.md",
+        "telegram": "message_id logged in wiki/log.md"
+      },
+      "depends_on": [],
+      "git_tracked": true,
+      "script_repo": "DVSLewis/hermes",
+      "note": "Replaces all prior argus-daily-brief.sh and v2/v3 variants. Canonical runner uses --send-telegram."
+    },
+    {
+      "id": "6f7eec24c6a0",
+      "name": "athena-synthesis",
+      "schedule": "30 7 * * *",
+      "schedule_human": "07:30 UTC daily",
+      "command": "python3 /root/.hermes/scripts/athena-synthesis.py",
+      "description": "DVS Athena daily knowledge synthesis — reads Argus inbox, produces structured knowledge",
+      "last_run_verified": "2026-05-16T07:31:58+00:00",
+      "last_run_status": "ok",
+      "expected_outputs": {
+        "synthesis_file": "wiki/knowledge-synthesis-YYYY-MM-DD.md",
+        "telegram": "message_id logged in wiki/log.md"
+      },
+      "depends_on": ["42cd1df992e7"],
+      "git_tracked": true,
+      "script_repo": "DVSLewis/hermes",
+      "note": "Depends on Argus inbox file being present. athena-synthesis.py handles missing deps gracefully."
+    }
+  ],
+  "orphaned_jobs": [
+    {
+      "id": "1b4dc234acf3",
+      "name": "athena-weekly-synthesis",
+      "reason": "No wiki log reference; not actively used; weekly cadence not confirmed"
+    },
+    {
+      "id": "cf97d1b5303a",
+      "name": "Argus Daily Brief v2",
+      "reason": "Superseded by argus-daily-brief (canonical)"
+    },
+    {
+      "id": "e2c09bee222e",
+      "name": "wiki-daily-backup",
+      "reason": "No wiki log reference; purpose unknown"
+    }
+  ],
+  "persistence_risk": {
+    "storage_path": "/root/.hermes/cron/jobs.json",
+    "storage_type": "overlay filesystem (container ephemeral)",
+    "restart_survival": "UNKNOWN — cron jobs NOT in git, NOT in a named volume",
+    "mitigation": "This file serves as durable desired-state. After any Hermes/cron reset, use this file to re-create jobs via: hermes cron edit <id> --prompt '<full command>' --cron '<schedule>'"
+  }
+}
