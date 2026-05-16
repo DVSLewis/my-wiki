@@ -394,3 +394,107 @@ Sources visited:
 [2026-05-15 09:25] ATHENA | Inbox content loaded: 2089 chars
 [2026-05-15 09:25] ATHENA | Running synthesis...
 [2026-05-15 09:25] ATHENA | Wiki page written: /root/workspace/my-wiki/wiki/knowledge-synthesis-2026-05-15.md
+[2026-05-15 09:25] ATHENA | Wiki pushed to GitHub
+[2026-05-15 09:25] ATHENA | Telegram delivered — message_id: 471
+[2026-05-15 09:25] ATHENA | === Athena complete — delivered, message_id: 471 ===
+[2026-05-15 09:25] ATHENA | Last synthesis marker updated: 2026-05-15
+
+## [2026-05-15] update | Hermes PID race — fix applied
+- **Issue:** Stale `gateway.pid` (PID 44, dead) blocked Hermes restart — gateway exiting with "PID file race lost" every ~20s
+- **Discovery:** `.env` has bare API key values on individual lines that execute as shell commands when sourced directly — safe for `grep`, dangerous to `source`
+- **Fix:** Added PID-only cleanup to `hermescheck.py` — removes stale `gateway.pid` only when no Hermes process is running AND the stored PID is dead
+- **Commit:** `e7d6f04 fix(hermes): ignore stale gateway pid during health check` — pushed to `DVSLewis/hermes`
+- **Verification:** Telegram `sendMessage` → `message_id: 478` ✅ | Hermes process PID 1317 alive ✅
+
+## [2026-05-15 23:20] update | Hermes gateway migrated to Zo User Service
+
+**Migration:** nohup/bashrc → Zo User Service (mode=process, supervised)
+**Service ID:** `svc_A2aDmAIyGzE` (pre-existing, updated via `update_user_service`)
+**Supervisor PID:** 2978 → RUNNING state confirmed (5s startsecs)
+**Application PID:** 2926 (hermes gateway run, managed by supervisor)
+**gateway.pid:** exists, points to PID 2926 ✅
+
+**Migration steps:**
+- Phase 0: Snapshot — Telegram `sendMessage` → msg_id 479 ✅
+- Phase 2: Rollback command saved at `/root/.hermes/checkpoints/rollback-command.txt`
+- Phase 3: PID 1317 killed (`kill -9`), no Hermes running confirmed ✅
+- Phase 5: gateway.pid — not present, nothing to clean ✅
+- Phase 6: `update_user_service` applied (service was pre-registered from earlier failed attempt)
+- Phase 7: Supervised Hermes PID 2926 alive ✅
+- Phase 8: Telegram `sendMessage` → msg_id 480 ✅
+- Phase 9: getUpdates confirmed (0 queued, gateway consuming) ✅
+- Phase 10: bashrc lines 32-34 commented out ✅
+- Phase 11: Git commit `56f68f6` migrated: hermes-gateway to Zo User Service ✅
+
+**Verification:**
+- Telegram: ok True msg_id 481 (final check) ✅
+- hermescheck: `[OK] Gateway process running — PID 2926` ✅
+- Supervisord log: `success: hermes-gateway entered RUNNING state` ✅
+- No PID race errors in logs ✅
+
+**Rollback command (saved):**
+`nohup /root/.hermes/hermes-agent/venv/bin/hermes gateway run > /root/logs/hermes-gateway.log 2>&1 &`
+(only if needed — service currently supervised by Zo)[2026-05-16 07:00] ARGUS | === Argus v3 starting ===
+[2026-05-16 07:00] ARGUS | Loaded 23 accounts
+[2026-05-16 07:00] ARGUS | Searching @VitalikButerin...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @karpathy...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @koeppelmann...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @timbeiko...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @samczsun...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @gakonst...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @superphiz...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @hudsonjameson...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @shivsakhuja...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @echinstitute...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @ethereumfndn...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @AustinGriffiths...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @cyrilXBT...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @aboutcircles...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @GnosisDAO...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @gnosischain...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @safe...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @gnosisguild...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @cowswap...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @kylearojas...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @thedaofund...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @chaskin22...
+[2026-05-16 07:00] ARGUS |   → 5 results
+[2026-05-16 07:00] ARGUS | Searching @etheconomiczone...
+[2026-05-16 07:01] ARGUS |   → 5 results
+[2026-05-16 07:01] ARGUS | Inbox written: /root/workspace/my-wiki/raw/daily-inbox/2026-05-16.md (20 signals)
+[2026-05-16 07:01] ARGUS | Brief written to /root/workspace/my-wiki/wiki/daily-brief-2026-05-16.md
+[2026-05-16 07:01] ARGUS | Telegram delivered — message_id: 495
+[2026-05-16 07:01] ARGUS | Message 1/4 delivered — message_id: 495
+[2026-05-16 07:01] ARGUS | Telegram delivered — message_id: 496
+[2026-05-16 07:01] ARGUS | Message 2/4 delivered — message_id: 496
+[2026-05-16 07:01] ARGUS | Telegram delivered — message_id: 497
+[2026-05-16 07:01] ARGUS | Message 3/4 delivered — message_id: 497
+[2026-05-16 07:01] ARGUS | Telegram delivered — message_id: 498
+[2026-05-16 07:01] ARGUS | Message 4/4 delivered — message_id: 498
+[2026-05-16 07:01] ARGUS | === Argus v3 complete — all messages delivered, last_id: 498 ===
+[2026-05-16 07:30] ATHENA | === Athena synthesis starting ===
+[2026-05-16 07:30] ATHENA | Inbox files to process: 1
+[2026-05-16 07:30] ATHENA | Inbox content loaded: 7023 chars
+[2026-05-16 07:30] ATHENA | Running synthesis...
+[2026-05-16 07:30] ATHENA | Wiki page written: /root/workspace/my-wiki/wiki/knowledge-synthesis-2026-05-16.md
