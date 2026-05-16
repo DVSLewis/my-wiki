@@ -543,3 +543,17 @@ remote
 [2026-05-16-DRYRUN] ARGUS | canonical runner | signals=85 brief=4 inbox=42 rejected=0 failed=none
 
 [2026-05-16-DRYRUN] ARGUS | canonical runner | signals=85 brief=4 inbox=42 rejected=0 failed=none
+
+## [2026-05-16 14:30] update | Argus cron migrated to canonical runner
+
+**Old cron command:** `python3 /root/.hermes/scripts/argus-daily-brief-v3.py` (cron id `42cd1df992e7`)
+**New cron command:** `python3 /root/.hermes/scripts/argus-daily-brief-canonical.py` (cron id `42cd1df992e7`)
+**Pre-cron validation commit:** `87a7153` — `fix(argus): tighten canonical dry-run and rejected artifacts`
+**Timestamp:** 2026-05-16 14:30 UTC
+**Rollback:** `hermes cron edit 42cd1df992e7 --prompt "python3 /root/.hermes/scripts/argus-daily-brief-v3.py"`
+**Canonical runner:** `/root/.hermes/scripts/argus-daily-brief-canonical.py` (Patched A+B+C applied, syntax verified, dry-run tested)
+
+Hermes service PID: 2926 alive ✅
+gateway.pid: 2926 ✅
+PID race errors: only pre-migration (May 15 23:18) ✅
+Next scheduled run: 2026-05-17T07:00:00+00:00
