@@ -537,3 +537,5 @@ remote
 - Canonical runner: Option B (new single-file Python)
 - Do NOT implement until manual dry-run passes
 [2026-05-16-DRYRUN] ARGUS | canonical runner | signals=85 brief=2 inbox=42 rejected=0 failed=none
+
+[2026-05-16-DRYRUN] ARGUS | canonical runner | signals=85 brief=2 inbox=42 rejected=0 failed=none
