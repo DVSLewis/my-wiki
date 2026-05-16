@@ -506,3 +506,27 @@ remote
 [2026-05-16 07:30] ATHENA | Telegram delivered — message_id: 499
 [2026-05-16 07:30] ATHENA | === Athena complete — delivered, message_id: 499 ===
 [2026-05-16 07:30] ATHENA | Last synthesis marker updated: 2026-05-16
+
+## [2026-05-16 15:41] fix | Hermes PID race — fixes applied, verified
+
+**Hermes PID race root cause:** `hermes gateway stop` was called by argus-daily-brief.sh cron jobs, killing the supervised Hermes process and triggering repeated supervisord respawns. The new Hermes instance would race with the PID file and exit.
+
+**Fixes applied (commit 6c28476):**
+- Fix 1: Removed `hermes gateway stop` calls from argus-daily-brief.sh — Hermes is now supervised by Zo User Service (supervisord), cannot have duplicates
+- Fix 2: Added `fcntl.LOCK_EX` around full gateway.pid read/check/delete sequence in hermescheck.py — prevents concurrent races when multiple processes call hermescheck simultaneously
+- Fix 3: Changed `TIMEOUT_VAL` from `60s` to `120s`, subprocess timeout from `65s` to `125s`, added explicit `timeout 120` to Telegram send line in argus-daily-brief.sh
+
+**Athena-synthesis.py:** Has no `hermes chat` subprocess calls — only git operations. No patch needed.
+
+**Git hygiene:**
+- Commit 7dd11ed: ignore .last-synthesis
+- Commit 07a2f00: Argus Brief + Athena Synthesis May 16
+- Commit 6c28476: fix(hermes): stop scheduled jobs from killing supervised gateway
+
+**Post-patch verification:**
+- Hermes PID 2926 alive ✅
+- gateway.pid matches live PID 2926 ✅
+- Telegram msg_id: 500 ✅
+- No new PID race errors in stderr log since patch time
+
+**Remaining risk:** If Hermes ever runs without supervisord (dev/test), the bashrc nohup lines are commented out and need to be uncommented for fallback restart. Rollback command saved at `/root/.hermes/checkpoints/rollback_20260515.txt`.
