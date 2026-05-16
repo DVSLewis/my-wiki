@@ -1,8 +1,8 @@
 # Signal: koeppelmann — 2026-05-16-DRYRUN
 
-**Title:** Koppelman - Wikipedia
+**Title:** Koppelman Family
 
-**URL:** https://en.wikipedia.org/wiki/Koppelman
+**URL:** http://wald.bol.ucla.edu/KoppelmanTree.htm
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-Charles Koppelman (1940–2022), American musician and businessman; Elaine Koppelman (1937–2019), American mathematician; Kim Koppelman (born 1956), politician
+A Johann Hermann Koppelmann applied for naturalization in 1838, in Baltimore County, Maryland, using the Anglicized name John Herman Koppelman. The 1840 federal
 
 **Source platform:** tavily
 **Source type:** search

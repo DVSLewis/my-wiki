@@ -1,8 +1,8 @@
 # Signal: ethereumfndn — 2026-05-16-DRYRUN
 
-**Title:** What Is the Ethereum Foundation? Everything You Need to Know ...
+**Title:** What is the Ethereum Foundation? | Crypto Academy
 
-**URL:** https://www.mexc.com/learn/article/what-is-the-ethereum-foundation-everything-you-need-to-know-about-programs-jobs-and-how-to-get-involved/1
+**URL:** https://finst.com/en/learn/articles/what-is-the-ethereum-foundation
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-The Ethereum Foundation is a non-profit organization established in 2014 to support Ethereum's development through funding, research, and community initiatives.
+## What is the Ethereum Foundation? The Ethereum Foundation (EF) is an independent non-profit organization dedicated to improving the Ethereum ecosystem. The foundation acts as a kind of bridge between developers, researchers, companies, and communities working together on the future of decentralized technology — and in this case, Ethereum. * The Ethereum Foundation (EF) is an independent non-profit organization that supports the Ethereum ecosystem through funding, research, and education. The g
 
 **Source platform:** tavily
 **Source type:** search

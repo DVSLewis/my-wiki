@@ -1,8 +1,8 @@
 # Signal: karpathy — 2026-05-16-DRYRUN
 
-**Title:** Andrej Karpathy Academic Website - Stanford Computer Science
+**Title:** Andrej Karpathy (@karpathy) / Posts / X - Twitter
 
-**URL:** https://cs.stanford.edu/people/karpathy/
+**URL:** https://x.com/karpathy?lang=en
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-![Image 1](https://cs.stanford.edu/people/karpathy/me2.jpg). [![Image 2](https://cs.stanford.edu/people/karpathy/icons/03-twitter.svg)](https://twitter.com/karpathy). [![Image 3](https://cs.stanford.edu/people/karpathy/icons/20-rss.svg)](https://karpathy.github.io/). [![Image 4](https://cs.stanford.edu/people/karpathy/icons/octocat.svg)](https://github.com/karpathy). [![Image 5](https://cs.stanford.edu/people/karpathy/scaledml2020.png)](https://www.youtube.com/watch?v=hx7BXih7zx8). [![Image 6](h
+Andrej Karpathy✓ ... I like to train large deep neural nets. Previously Director of AI @ Tesla, founding team @ OpenAI, PhD @ Stanford. Posts.
 
 **Source platform:** tavily
 **Source type:** search

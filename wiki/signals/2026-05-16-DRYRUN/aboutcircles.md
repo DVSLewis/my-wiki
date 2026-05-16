@@ -1,8 +1,8 @@
 # Signal: aboutcircles — 2026-05-16-DRYRUN
 
-**Title:** Circles - Money, Reimagined
+**Title:** an ambitious experiment on money. For the first time ever, you can ...
 
-**URL:** https://aboutcircles.com/
+**URL:** https://x.com/aboutcircles/status/1925174902140944847
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-## Turning Money on its Head ‍ Throughout history, money has been issued by a central authority for everyone else to use. Circles is a new kind of money that anyone can create and use, without needing a bank or government. People you know and trust in real life will accept your Circles directly, but you can also send Circles to people you don’t know through the emerging trust network. Sign up for a Circles account and accept an invite from an existing Circles member to start creating 24 CRC a da
+Introducing Circles — an ambitious experiment on money. For the first time ever, you can create your own money without needing a bank or a
 
 **Source platform:** tavily
 **Source type:** search

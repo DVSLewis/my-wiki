@@ -1,8 +1,8 @@
 # Signal: etheconomiczone — 2026-05-16-DRYRUN
 
-**Title:** More Powerful Ethereum Coming This Summer ... - YouTube
+**Title:** ‎From - Apple TV
 
-**URL:** https://www.youtube.com/watch?v=3uuRT5Zoi5s
+**URL:** https://tv.apple.com/us/show/from/umc.cmc.56o18x26glzqpzzysq4vuu9nb
 
 **Published:** None
 
@@ -12,11 +12,11 @@
 
 **Disposition:** background
 
-**Score:** 0.20
+**Score:** 0.00
 
 **Summary:**
 
-The Ethereum Economic Zone (EEZ) is a framework co-funded by the Ethereum Foundation, Gnosis, and Zisk to unify fragmented Layer 2 (L2)
+FROM unravels the mystery of a nightmarish town in the middle of nowhere that traps all those who enter. As the unwilling residents fight to keep a sense of
 
 **Source platform:** tavily
 **Source type:** search

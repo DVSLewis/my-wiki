@@ -1,8 +1,8 @@
 # Signal: superphiz — 2026-05-16-DRYRUN
 
-**Title:** superphiz.eth - GitPOAP
+**Title:** Superphiz on Bankless : r/ethfinance - Reddit
 
-**URL:** https://www.gitpoap.io/p/superphiz.eth
+**URL:** https://www.reddit.com/r/ethfinance/comments/ux4zko/superphiz_on_bankless/
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-View superphiz.eth's profile on GitPOAP - a decentralized reputation platform that represents off-chain accomplishments and contributions on chain as POAPs.
+u/Superphiz is coming on Bankless. Marked NSFW cause it's gonna be hot. Lmk what topics y'all are interested in hearing.
 
 **Source platform:** tavily
 **Source type:** search

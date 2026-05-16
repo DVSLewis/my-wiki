@@ -1,8 +1,8 @@
 # Signal: samczsun — 2026-05-16-DRYRUN
 
-**Title:** Famed White Hat Hacker Samczsun on How to Improve Crypto ...
+**Title:** How Samczsun is bridging the old web to the dark forest - Medium
 
-**URL:** https://pods.media/unchained/famed-white-hat-hacker-samczsun-on-how-to-improve-crypto-security
+**URL:** https://medium.com/@mike_orcutt/how-samczsun-is-bridging-the-old-web-to-the-dark-forest-53074b9f171e
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-Well-known white hat hacker and head of security at Paradigm samczsun recently took the wraps off a new security organization called the Security Alliance
+It's been said before, but Samczsun is like Batman. He dwells quietly in the shadows, hiding his identity behind a mask.
 
 **Source platform:** tavily
 **Source type:** search

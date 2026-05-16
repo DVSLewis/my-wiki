@@ -1,8 +1,8 @@
 # Signal: AustinGriffiths — 2026-05-16-DRYRUN
 
-**Title:** Arctostaphylos × 'Austin Griffiths' - Oregon State Landscape Plants
+**Title:** Austin Griffiths Manzanita - Calscape
 
-**URL:** https://landscapeplants.oregonstate.edu/plants/arctostaphylos-austin-griffiths
+**URL:** https://calscape.org/Arctostaphylos-'Austin-Griffiths'-(Austin-Griffiths-Manzanita)
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-Common name: Austin Griffiths Manzanita. Pronunciation: ark-tow-STAF-i-los. Family: Ericaceae. Genus: Arctostaphylos. Type: Broadleaf. Native to (or
+Austin Griffiths Manzanita (Arctostaphylos 'Austin Griffiths') is a large evergreen shrub in the Heath family (Ericaceae).
 
 **Source platform:** tavily
 **Source type:** search

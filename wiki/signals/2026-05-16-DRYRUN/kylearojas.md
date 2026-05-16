@@ -1,8 +1,8 @@
 # Signal: kylearojas — 2026-05-16-DRYRUN
 
-**Title:** Kyle Rojas | Speaker
+**Title:** Kyle Rojas | Life is good
 
-**URL:** https://consensus2023.coindesk.com/agenda/speaker/-kyle-rojas
+**URL:** https://x.com/kyleArojas/status/1940399168213901567
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-Kyle Rojas oversees Global Business Development and Partnerships at Edge & Node. He is focused on growing The Graph ecosystem, scaling of The Graph Network,
+Life hack: Find a person you love, find a job that challenges you, raise kids, and bring the family on work trips around the world.
 
 **Source platform:** tavily
 **Source type:** search

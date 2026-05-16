@@ -1,8 +1,8 @@
 # Signal: timbeiko — 2026-05-16-DRYRUN
 
-**Title:** Tim Beiko - HackMD
+**Title:** Tim Beiko | Coinpedia User Profile
 
-**URL:** https://hackmd.io/@timbeiko
+**URL:** https://app.coinpedia.org/timbeiko/
 
 **Published:** None
 
@@ -10,13 +10,13 @@
 
 **Tier:** TIER 1
 
-**Disposition:** background
+**Disposition:** brief
 
-**Score:** 0.20
+**Score:** 0.50
 
 **Summary:**
 
-NYC Prague Istanbul Speaker Email Topic3:00 9:00 11:00 Tina Zhen (Istanbul Host) tina@flashbots.net Istanbul Stage Opening + Chapter 0: Bird's Eye View of
+# Tim Beiko. Tim Beiko is a Canadian computer scientist who plays a significant role in the Ethereum project. Tim Beiko conducts the main protocol meetings for Ethereum. In addition to this, he discusses improvements to the protocol and participates in different formats (media, podcasts, conferences) to convey the Ethereum roadmap to the wider community along with Vitalik Buterin. | Education | Bachelor’s Degree in Computer Science from Concordia University |. Bachelor’s Degree in Computer Scien
 
 **Source platform:** tavily
 **Source type:** search

@@ -1,8 +1,8 @@
 # Signal: thedaofund — 2026-05-16-DRYRUN
 
-**Title:** Damian Rusinek - thedaofund #ethsecurity - LinkedIn
+**Title:** just donated to the @thedaofund Security QF round on @Giveth
 
-**URL:** https://www.linkedin.com/posts/damianrusinek_thedaofund-ethsecurity-activity-7452753830775091200-Bthy
+**URL:** https://www.kucoin.com/news/community/ETH/69f9423e2f8d6c0007324214
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-Securing Smart Contracts and Blockchain Applications since 2018 Co-Founder of Composable Security. 2w. Report this post; Close menu.
+just donated to the @thedaofund Security QF round on @Giveth, but I have the feeling I'm missing some of the absolutely crucial to avoid
 
 **Source platform:** tavily
 **Source type:** search

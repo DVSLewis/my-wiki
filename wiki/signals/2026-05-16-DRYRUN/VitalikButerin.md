@@ -1,8 +1,8 @@
 # Signal: VitalikButerin — 2026-05-16-DRYRUN
 
-**Title:** ‪Vitalik Buterin‬ - ‪Google Scholar‬
+**Title:** Vitalik Buterin - Arkham
 
-**URL:** https://scholar.google.com/citations?user=DLP9gTAAAAAJ&hl=en
+**URL:** https://intel.arkm.com/explorer/entity/vitalik-buterin
 
 **Published:** None
 
@@ -16,7 +16,7 @@
 
 **Summary:**
 
-A next-generation smart contract and decentralized application platform. V Buterin. white paper 3 (37), 2-1, 2014. 8089, 2014 ; Ethereum white paper. V Buterin.
+On-chain analysis of Vitalik Buterin's cryptocurrency holdings by Arkham. Discover holdings, wallets, inflows, outflows and counterparties using our
 
 **Source platform:** tavily
 **Source type:** search
