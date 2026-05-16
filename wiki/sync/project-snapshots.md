@@ -166,3 +166,35 @@ When exporting files from canonical locations to ChatGPT or Claude projects:
 ---
 
 *VERIFICATION REQUIRED: The fields in this file (project names, export locations, dates, included files) must be verified and filled in manually during the next session that has access to ChatGPT and Claude project interfaces.*
+
+**Last exported:** 2026-05-16 16:47 UTC  
+**Export location:** `/root/workspace/my-wiki/exports/dvs-pantheon-project-source-2026-05-16.zip`  
+**Export format:** ZIP of 10 markdown files  
+**Verification report:** `wiki/sync/project-snapshot-verification-2026-05-16.md`
+
+**ChatGPT project upload:** MANUAL UPLOAD REQUIRED  
+**Claude project upload:** MANUAL UPLOAD REQUIRED
+
+### Included Files (2026-05-16 Export)
+
+```markdown
+00-READ-FIRST.md        — Orientation, what this snapshot is vs canonical truth
+01-CURRENT-STATE.md      — Live system status, today's migrations, current priorities
+02-SOURCE-OF-TRUTH-PROTOCOL.md — Condensed authority map and change manifest
+03-SESSION-HANDOFF.md    — Practical session start/end checklists
+04-HERMES-STATUS.md     — Hermes User Service migration, PID race fix, rollback
+05-ARGUS-ATHENA-STATUS.md — Active cron IDs, canonical runner, verify checklist
+06-AGENT-ROSTER.md      — Nine-agent roster, Apollo correction, model routing
+07-PRIVATE-BOUNDARIES.md — What NEVER to upload (secrets, corpus, private work)
+08-OPEN-PRIORITIES.md   — Immediate/short-term/medium-term action list
+09-FILES-TO-READ-FIRST.md — Ordered canonical reading list
+```
+
+### Verified Commit Hashes
+
+```markdown
+my-wiki: f180ef8 — docs(sync): define DVS source-of-truth protocol
+hermes:  87a7153 — fix(argus): tighten canonical dry-run and rejected artifacts
+hermes:  fe71322 — fix(argus): load telegram token from hermes .env safely
+hermes:  6c28476 — fix(hermes): stop scheduled jobs from killing supervised gateway
+```
