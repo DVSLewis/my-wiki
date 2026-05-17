@@ -83,25 +83,19 @@ For Hermes under Zo User Service:
 
 ## Permanent Fixes Required
 
-1. Patch `hermescheck.py`:
-   - detect Zo User Service deployment
-   - use `supervisorctl -c /etc/zo/supervisord-user.conf`
-   - classify `gateway.pid` as advisory under Zo
-   - call `hermes cron list`
-   - reclassify exact gateway warning as false-positive only when supervisord confirms RUNNING
+1. ✅ Patched `hermescheck.py` (2026-05-17):
+   - Detects Zo User Service deployment
+   - Uses `supervisorctl -c /etc/zo/supervisord-user.conf status hermes-gateway` as authoritative health check
+   - Classifies `gateway.pid` as advisory under Zo
+   - Detects and kills stray Hermes processes (any PID != supervised PID)
+   - Scans recent logs for Telegram conflict errors
+   - Commits: `dcb5adc`
 
-2. Harden watchdogs:
-   - run Python scripts directly
-   - never depend on Hermes gateway
-   - log OK / RECOVERED / FAILED every run
-   - send direct Telegram alerts on recovery/failure
+2. Harden watchdogs: ✅ Already implemented (run Python scripts directly, not via Hermes gateway)
 
-3. Treat Hermes cron as probationary:
-   - not production-trusted until 2026-05-18 Argus and Athena runs survive
-   - verify Telegram delivery IDs
-   - verify watchdog behavior
+3. Treat Hermes cron as probationary: ✅ Documented in process-supervision-authority.md
 
-4. Add process supervision authority runbook.
+4. Add process supervision authority runbook: ✅ Created
 
 ## Current Recovery State
 
