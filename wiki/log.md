@@ -567,3 +567,26 @@ base you need it again."
 [2026-05-17 07:45] ATHENA | Inbox content loaded: 8000 chars
 [2026-05-17 07:45] ATHENA | Running synthesis...
 [2026-05-17 07:45] ATHENA | Wiki page written: /root/workspace/my-wiki/wiki/knowledge-synthesis-2026-05-17.md
+[2026-05-17 07:45] ATHENA | Wiki pushed to GitHub
+[2026-05-17 07:45] ATHENA | Telegram delivered — message_id: 512
+[2026-05-17 07:45] ATHENA | === Athena complete — delivered, message_id: 512 ===
+[2026-05-17 07:45] ATHENA | Last synthesis marker updated: 2026-05-17
+
+
+## 2026-05-17 08:45 UTC — DVS watchdog scripts created and verified
+
+- Created `/root/.hermes/scripts/dvs-watchdog.py`.
+- Committed Hermes watchdog script at hermes commit `825c889`.
+- Verified Argus watchdog path independently of Hermes gateway.
+  - Telegram message_id=513
+  - Status: OK
+  - Brief artifact found
+  - Daily inbox hits found
+- Verified Athena watchdog path independently of Hermes gateway.
+  - Telegram message_id=514
+  - Status: OK
+  - Synthesis artifact found, 4132 bytes
+- Watchdog sends Telegram directly from `/root/.hermes/.env` using Python stdlib `urllib`.
+- Watchdog writes every run to `/root/.hermes/logs/watchdogs/`.
+- Watchdog statuses are now explicit: OK / RECOVERED / FAILED.
+- `gateway.pid` deletion is expected because stale PID file was removed during incident cleanup.

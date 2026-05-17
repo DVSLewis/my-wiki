@@ -250,3 +250,38 @@ The combination of a git-tracked desired-state file and Zo-managed automation wa
 ---
 
 *Append new manifest entries above this line. Each entry must have all fields filled. Delete incomplete entries.*
+
+## 2026-05-17 — Direct DVS watchdog runner
+
+Status: KEEP pending 2026-05-18 production proof
+
+Failure evidence:
+- Zo watchdogs were scheduled but no concrete DVS watchdog scripts existed.
+- Hermes cron failure on 2026-05-17 required manual recovery.
+- Watchdog behavior was not independently verifiable.
+
+Root cause:
+- The watchdog concept existed as schedule intent, not executable infrastructure.
+- Recovery path depended on agent/session behavior instead of deterministic scripts.
+
+Targeted fix:
+- Created `/root/.hermes/scripts/dvs-watchdog.py`.
+- Watchdog verifies Argus/Athena artifacts directly.
+- Watchdog runs canonical Python recovery scripts directly if artifacts are missing.
+- Watchdog sends Telegram directly without Hermes gateway dependency.
+- Watchdog logs every run to `/root/.hermes/logs/watchdogs/`.
+
+Evidence:
+- Argus watchdog verified and sent Telegram message_id=513.
+- Athena watchdog verified and sent Telegram message_id=514.
+- Hermes commit: `825c889`.
+
+Predicted improvements:
+- Missed Hermes cron delivery can be detected and recovered without Hermes gateway.
+- Watchdog status is auditable via local logs and Telegram message IDs.
+- Future scheduled jobs can reuse this watchdog pattern.
+
+Risk register:
+- Telegram token remains dependency.
+- Artifact presence may not prove content quality.
+- Production proof still required on 2026-05-18.
