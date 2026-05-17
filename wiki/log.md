@@ -590,3 +590,15 @@ base you need it again."
 - Watchdog writes every run to `/root/.hermes/logs/watchdogs/`.
 - Watchdog statuses are now explicit: OK / RECOVERED / FAILED.
 - `gateway.pid` deletion is expected because stale PID file was removed during incident cleanup.
+
+
+## 2026-05-17 09:03:14 UTC — Pre-proof baseline snapshot captured
+
+- Captured baseline before 2026-05-18 production proof window.
+- Snapshot: `wiki/snapshots/2026-05-17-pre-proof-baseline-2026-05-17-090314.md`
+- Proof window:
+  - Argus scheduled run: 2026-05-18 07:00 UTC
+  - Argus watchdog: 2026-05-18 07:05 UTC
+  - Athena scheduled run: 2026-05-18 07:30 UTC
+  - Athena watchdog: 2026-05-18 07:40 UTC
+
